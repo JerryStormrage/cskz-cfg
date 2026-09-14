@@ -6,35 +6,46 @@ Personal CS:GO / CS2 KZ configs, organized into Green (native movement) and Bind
 
 ## 简介 / Overview
 
-两款游戏统一使用 **Mouse4 加载 Green，Mouse5 加载 Bind**。Green 保留 KZ 常用功能键，移动使用原生命令；Bind 在此基础上提供可选辅助功能。
+CS:GO 使用 **P 切换 Green / Bind**，启动默认 Green；CS2 目前仍使用 **Mouse4 / Mouse5** 切换模式。
 
-Both games use **Mouse4 for Green and Mouse5 for Bind**. Green combines native movement with KZ utility keys. Bind adds optional movement assists.
+CS:GO uses **P to switch Green / Bind** and starts in Green. CS2 currently uses **Mouse4 / Mouse5** to switch modes.
 
-每次加载 Bind，**O / P / K 对应的可选功能默认关闭**，按键后开启。CS:GO 的动态 Null 保留原有逻辑，不受这些开关控制；CS2 不包含 Null 或 2tick。
+CS:GO 已完成本轮基本功能实测；CS2 配置保留现状，待后续测试。
 
-Each Bind load resets its optional **O / P / K features to OFF**. CS:GO keeps its existing dynamic null-bind logic, independently of these toggles. CS2 includes neither null binds nor 2-tick binds.
+CS:GO has passed this round of basic in-game checks. CS2 configs remain unchanged, pending further testing.
 
 ## CS:GO Legacy
 
-| 模式 / Mode | 文件 / File | 灵敏度 / Sensitivity |
+| 文件 / File | 用途 / Purpose |
+| --- | --- |
+| [csgokzgreen.cfg](csgo/csgokzgreen.cfg) | Green：原生移动 / Native movement |
+| [csgokzbind.cfg](csgo/csgokzbind.cfg) | Bind：动态 Null、右键自动松 W 蹲跳与可选 2tick / Dynamic null binds, Mouse2 crouch-jump with automatic W release, and optional 2-tick binds |
+| [autoexec.cfg](csgo/autoexec.cfg) | 启动默认加载 Green / Load Green on startup |
+
+两种模式的灵敏度均为 **2.7**，各自独立加载所需设置，每次切换只显示最终模式的控制台说明。
+
+Both modes use **2.7 sensitivity** and initialize their own settings. Each switch prints only the final mode's console guide.
+
+| 按键 / Key | Green | Bind |
 | --- | --- | --- |
-| Green | `csgo/csgogreen.cfg` | 2.7 |
-| Bind | `csgo/csgobind.cfg` | 2.7 |
+| P | 切换到 Bind / Switch to Bind | 切换到 Green / Switch to Green |
+| O | AD 节拍音开关，默认关闭 / Toggle A/D sounds, default OFF | AD 节拍音开关，默认关闭 / Toggle A/D sounds, default OFF |
+| Mouse2 | 按住蹲伏 / Hold to duck | 蹲跳并自动松 W / Crouch-jump with automatic W release |
+| K | 无绑定 / Unbound | 2tick 开关，默认关闭 / Toggle 2-tick binds, default OFF |
+| E | 使用 / Use | 使用；2tick 开启时兼作序列重置 / Use; also reset the sequence when 2-tick binds are ON |
+| 滚轮向上 / Wheel up | 存点 / Checkpoint | 2tick 关闭时存点，开启并按 E 后执行四步序列 / Checkpoint when OFF; four-step sequence after enabling and pressing E |
+| 滚轮向下 / Wheel down | 普通跳跃 / Normal jump | 普通跳跃 / Normal jump |
+| Mouse4 / Mouse5 | 无绑定 / Unbound | 无绑定 / Unbound |
 
-Green 使用原生移动绑定。Bind 自动加载 Green 的通用配置，再加入 WAD/SAD 兼容的动态 A/D Null 与以下开关。
+- **P 只切换模式**，不单独开关自动松 W。进入 Bind 即启用右键辅助；返回 Green 后右键恢复普通蹲伏。  
+  **P only switches modes.** The Mouse2 assist is active in Bind; returning to Green restores ordinary ducking.
 
-Green uses native movement binds. Bind loads Green's shared settings first, then adds WAD/SAD-compatible dynamic A/D null binds and the toggles below.
+- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换；相关服务器命令需要插件支持。  
+  Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, and H to toggle the HUD. Server commands require plugin support.
 
-| 按键 / Key | 功能 / Action | 加载 Bind 后 / On Bind load |
-| --- | --- | --- |
-| O | AD 节拍音 / A/D keypress sounds | 关闭 / OFF |
-| P | 鼠标右键蹲跳并自动松 W / Mouse2 crouch-jump with automatic W release | 关闭 / OFF |
-| K | 四步 2tick 滚轮绑定 / Four-step 2-tick wheel sequence | 关闭 / OFF |
+- K 开启后，按 E 重置序列，再向上滚动依次执行蹲、跳、松跳、松蹲；四步完成后滚轮变为普通跳跃，下次按 E 重新准备。K 关闭后恢复存点。  
+  Enable K, press E, then scroll up through duck, jump, release jump, and release duck. After four steps, the wheel performs normal jumps until E resets it. Disabling K restores checkpoints.
 
-- P 关闭时，鼠标右键恢复普通武器右键功能。  
-  With P disabled, Mouse2 uses the normal secondary-attack command.
-- K 开启后，按 E 重置序列，再向上滚动滚轮依次执行蹲、跳、松跳、松蹲；关闭后，滚轮向上恢复存点。  
-  With K enabled, press E to reset the sequence, then scroll up through duck, jump, release jump, and release duck. Disabling K restores scroll-up checkpoints.
 - Bind 加载时 A/D 先使用普通移动；首次松开 W 或 S 后启用 Null，按下 W/S 时临时使用普通 A/D。  
   Bind starts with ordinary A/D movement. Releasing W or S activates null binds; pressing W/S temporarily restores ordinary A/D.
 
@@ -63,20 +74,24 @@ Automatic W release is included in `cs2bind.cfg`; no separate `cs2-w.cfg` is req
 1. 下载仓库：点击 **Code → Download ZIP**，解压。  
    Download the repository using **Code → Download ZIP**, then extract it.
 
-2. 将 `csgo/` 或 `cs2/` 文件夹**里面的两份 cfg**复制到对应游戏的 cfg 目录，保留文件名。  
-   Copy **both cfg files inside** `csgo/` or `cs2/` into the corresponding game's cfg directory, keeping their filenames.
+2. CS:GO：将 `csgo/` 内的 `csgokzgreen.cfg` 和 `csgokzbind.cfg` 复制到实际运行的 CS:GO Legacy 的 `csgo/cfg/` 目录。CS2：将 `cs2/` 内两份 cfg 复制到对应游戏 cfg 目录。  
+   For CS:GO, copy `csgokzgreen.cfg` and `csgokzbind.cfg` from `csgo/` into the `csgo/cfg/` directory of your active CS:GO Legacy installation. For CS2, copy both files from `cs2/` into its cfg directory.
 
-3. 打开游戏控制台，执行对应命令；之后即可使用 Mouse4 / Mouse5 切换。  
-   Open the game console and run the appropriate command below. Mouse4 / Mouse5 will then switch modes.
+3. 打开游戏控制台，执行下方命令；CS:GO 使用 P 切换，CS2 使用 Mouse4 / Mouse5 切换。  
+   Run the appropriate command below in the game console. Switch CS:GO modes with P and CS2 modes with Mouse4 / Mouse5.
 
 | 游戏 / Game | 加载 Green / Load Green | 加载 Bind / Load Bind |
 | --- | --- | --- |
-| CS:GO Legacy | `exec csgogreen` | `exec csgobind` |
+| CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
 | CS2 | `exec cs2green` | `exec cs2bind` |
 
-Bind 会调用同目录的 Green 文件，两份文件必须一起安装。
+CS:GO 若需启动默认 Green，将 `csgo/autoexec.cfg` 放入同一目录；如果已有 autoexec，只在原文件末尾添加 `exec csgokzgreen`，保留原有设置。游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
-Bind loads the Green file from the same directory, so both files must be installed together.
+To start CS:GO in Green, place `csgo/autoexec.cfg` in the same directory. If you already have an autoexec, preserve it and append `exec csgokzgreen`. If the game is running, execute `exec csgokzgreen` once to load the update.
+
+CS2 的 Bind 会调用同目录的 Green，两份文件需一起安装。
+
+CS2 Bind loads Green from the same directory; install both files together.
 
 ## 使用说明 / Usage notes
 
@@ -99,8 +114,8 @@ Bind loads the Green file from the same directory, so both files must be install
 
 | 旧文件 / Previous file | 新文件 / Current file |
 | --- | --- |
-| `csgokzgreen.cfg` | `csgo/csgogreen.cfg` |
-| `csgokzbind.cfg` | `csgo/csgobind.cfg` |
+| `csgogreen.cfg` | `csgo/csgokzgreen.cfg` |
+| `csgobind.cfg` | `csgo/csgokzbind.cfg` |
 | `cs2mg.cfg` | `cs2/cs2green.cfg` |
 | `cs2kz.cfg` | `cs2/cs2bind.cfg` |
 | `cs2-w.cfg` | 合并进 / Merged into `cs2/cs2bind.cfg` |
