@@ -14,11 +14,11 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 ### 使用说明
 
-- **Green 指原生移动绑定，不代表全部键位均为游戏默认。**
+- **Green 指原生移动绑定，不代表全部键位均为游戏默认。KZ 相关按键配置会影响游玩 CS2 的其他模式，例如官方竞技、ZE、MG 等，请按需要自行修改。本文档未列出全部按键功能，请查阅 cfg 中的具体配置；大部分配置都有注释，没有编程基础也可以对照阅读。**
 
 - **配置包含个人灵敏度、键位及 HUD 设置，使用前请按自己的习惯调整。**
 
-  HUD 由 zer0k 编写，其中的各项设置由玩家自定义，导出的配置内容也因人而异。本项目保存的是我个人导出的设置，并非 zer0k 的个人偏好。设置默认通过 API 保存，但有时可能未正确加载，因此我将其导出并保存在 cfg 中，方便恢复自己的设置，无需每次手动调整。
+  HUD 的作者是 zer0k，具体配置由各位玩家自行定义。本项目保存的是我个人的 HUD 偏好设置，您可以按自己的习惯调整并导出。设置默认通过 API 保存，但有时可能未正确加载，因此我将其导出并保存在 cfg 中，方便恢复自己的设置，无需每次手动调整。
 
 - 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。
 
@@ -45,7 +45,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 - **P 只切换模式**，不单独开关自动松 W。进入 Bind 即启用右键辅助；返回 Green 后右键恢复普通蹲伏。
 
-- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换，以及 J 持续跳跃统计开关（`sm_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。
+- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换，以及 J 持续跳跃统计开关；相关服务器命令需要插件支持。
 
 - **2tick 大跳：**按 K 开启，先按 E 重置蹲伏状态，再正常向上滚动滚轮即可触发。**每次触发前都需要先按 E 重置。**再次按 K 关闭后，滚轮向上恢复存点。
 
@@ -112,11 +112,11 @@ For CS2, manually run `exec cs2kzgreen` in the console before first use. No `aut
 
 ### Usage notes
 
-- **Green refers to native movement binds, not a completely default keyboard layout.**
+- **Green refers to native movement binds, not a completely default keyboard layout. KZ keybinds also affect other CS2 modes, such as official Competitive, ZE, and MG, so adjust them as needed. This document does not list every key function; check the cfg files for the full configuration. Most settings include comments to help you understand them without programming experience.**
 
 - **These configs include personal sensitivity, keybinds, and HUD settings. Adjust them to your needs.**
 
-  The HUD was developed by zer0k, while its settings are customized by each player, so exported configs vary from player to player. This project includes my own exported settings, not zer0k's personal preferences. Settings are normally saved through an API, but may occasionally fail to load correctly. I therefore keep an exported copy in the cfg to restore my setup without having to adjust everything manually each time.
+  The HUD was developed by zer0k, and each player customizes their own configuration. This project includes my personal HUD preferences, which you can adjust and export to suit your needs. Settings are normally saved through an API, but may occasionally fail to load correctly. I therefore keep an exported copy in the cfg to restore my setup without having to adjust everything manually each time.
 
 - Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules.
 
@@ -143,7 +143,7 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 
 - **P only switches modes.** The Mouse2 assist is active in Bind; returning to Green restores ordinary ducking.
 
-- Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD, and J to toggle always-on jumpstats (`sm_jsalways`, executed directly as a console command). Server commands require plugin support.
+- Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD, and J to toggle always-on jumpstats. Server commands require plugin support.
 
 - **2-tick crouch-jump:** Press K to enable it, press E to reset the duck state, then scroll up normally to trigger the jump. **Press E to reset before every attempt.** Press K again to disable it and restore scroll-up checkpoints.
 
