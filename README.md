@@ -22,6 +22,12 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 - 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。部分服务器可能禁止使用相关 Bind 命令，请在使用前查阅并遵守对应服务器的规则。因违反服务器规则而导致的封禁，由使用者自行承担责任。部分 Bind 功能也可能在 Valve 更新游戏后失效，本项目不保证其能够长期稳定使用。
 
+- **CS2 必需启动项：在 KZ 服务器内执行本项目 cfg、通过 P 切换模式前，请先在 Steam 库右键 Counter-Strike 2 →“属性”→“通用”→“启动选项”中添加 `-disable_workshop_command_filtering`，然后重启游戏。**已有启动项请保留，用空格分隔后追加。该参数用于关闭创意工坊地图的命令过滤，应填写在启动选项中，不是输入控制台或写进 cfg。参见 [CS2KZ 使用指南](https://cs2kz.org/servers)。
+
+- **CS2 的 KZ 操作通过 cfg 直接绑定按键实现，不再使用默认 Z/X/C 打开的 radio 菜单入口。**数字键 1–7 分别用于存点、传送、上一检查点、下一检查点、撤销、暂停和重开；X、C 改为喷涂和清贴花。这是直接绑定菜单中的常用功能，并非重新创建一个 radio 菜单。
+
+- Z 键的 **Zed meme 语音**是我额外加入的可选配置，其他服务器不一定支持。不需要时，可在 `cs2kzgreen.cfg` 中删除“Zed 服务器 meme 语音”注释下的两条 `alias`（`+kz_radio`、`-kz_radio`）及 `bind z +kz_radio`。如果已经加载过该配置，还需在控制台执行一次 `unbind z`，或自行将 Z 重新绑定为所需功能；仅从文件中删除内容不会清除游戏中已有的绑定。
+
 ### CS:GO Legacy
 
 | 模式 | 文件 | 用途 |
@@ -95,7 +101,9 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 3. 打开记事本，粘贴一份 cfg 的完整内容，选择“文件 → 另存为”。保存位置选择上一步的游戏 `cfg` 目录，文件名与项目中的文件名保持一致，例如 `cs2kzgreen.cfg`；**“保存类型”选择“所有文件”，编码选择 UTF-8，确保文件名不是 `cs2kzgreen.cfg.txt`。**用同样的方法保存另一份 cfg。如果已有同名文件，先备份再替换。
 
-4. 打开游戏控制台，执行对应命令；两款游戏均使用 **P** 切换模式。
+4. **CS2 玩家先设置启动项：**Steam 库右键 Counter-Strike 2 →“属性”→“通用”→“启动选项”，追加 `-disable_workshop_command_filtering`，保留原有启动项并用空格分隔，然后重启游戏。CS:GO 无需此步骤。
+
+5. 打开游戏控制台，执行对应命令；两款游戏均使用 **P** 切换模式。
 
 | 游戏 | 加载 Green | 加载 Bind |
 | --- | --- | --- |
@@ -128,6 +136,12 @@ For CS2, manually run `exec cs2kzgreen` in the console before first use. No `aut
   The HUD was developed by zer0k, and each player customizes their own configuration. This project includes my personal HUD preferences, which you can adjust and export to suit your needs. Settings are normally saved through an API, but may occasionally fail to load correctly. I therefore keep an exported copy in the cfg to restore my setup without having to adjust everything manually each time.
 
 - Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules. Some servers may prohibit these binds; read and follow the rules of each server before using them. Users are solely responsible for bans resulting from violations of server rules. Some bind features may also stop working after Valve updates the game, and this project does not guarantee that they will remain functional or reliable over time.
+
+- **Required CS2 launch option: before executing these configs on a KZ server or switching modes with P, right-click Counter-Strike 2 in your Steam Library → Properties → General → Launch Options, add `-disable_workshop_command_filtering`, and restart the game.** Preserve existing options and separate them with a space. This disables Workshop map command filtering; enter it in Launch Options, not in the console or a cfg file. See the [CS2KZ guide](https://cs2kz.org/servers).
+
+- **In CS2, this cfg binds KZ actions directly to keys instead of using the default Z/X/C radio menu shortcuts.** Keys 1–7 perform checkpoint, teleport, previous checkpoint, next checkpoint, undo, pause, and restart. X and C are rebound to paint and clear decals. These binds provide direct access to common menu actions; they do not create a replacement radio menu.
+
+- The **Zed meme voice** binding on Z is an optional addition of mine and may not work on other servers. To remove it, delete the two aliases (`+kz_radio` and `-kz_radio`) and `bind z +kz_radio` under the Zed meme voice comment in `cs2kzgreen.cfg`. If you have already loaded the config, also run `unbind z` once in the console, or rebind Z to your preferred action; deleting lines from the file does not clear an existing in-game binding.
 
 ### CS:GO Legacy
 
@@ -202,7 +216,9 @@ Copy only the configs for the game you play. There is no need to download or ext
 
 3. Open Notepad, paste the full contents of one cfg, and choose **File → Save As**. Save it in the game's `cfg` folder from the previous step, using the exact filename from this project, such as `cs2kzgreen.cfg`. **Set “Save as type” to “All files” and encoding to UTF-8. Make sure the filename is not `cs2kzgreen.cfg.txt`.** Repeat for the other cfg. Back up any existing files with the same names before replacing them.
 
-4. Open the game console and run the appropriate command below. Use **P** to switch modes in either game.
+4. **CS2 players must first set the launch option:** right-click Counter-Strike 2 in your Steam Library → Properties → General → Launch Options, append `-disable_workshop_command_filtering`, and restart the game. Preserve existing options and separate them with a space. Skip this step for CS:GO.
+
+5. Open the game console and run the appropriate command below. Use **P** to switch modes in either game.
 
 | Game | Load Green | Load Bind |
 | --- | --- | --- |
