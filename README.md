@@ -6,13 +6,13 @@ Personal CS:GO / CS2 KZ configs, organized into Green (native movement) and Bind
 
 ## 简介 / Overview
 
-CS:GO 使用 **P 切换 Green / Bind**，启动默认 Green；CS2 目前仍使用 **Mouse4 / Mouse5** 切换模式。
+CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。CS:GO 的启动入口默认加载 Green；CS2 首次使用先执行 `exec cs2kzgreen`。
 
-CS:GO uses **P to switch Green / Bind** and starts in Green. CS2 currently uses **Mouse4 / Mouse5** to switch modes.
+Both games use **P to switch Green / Bind**. The CS:GO startup entry loads Green; for CS2, run `exec cs2kzgreen` first.
 
-CS:GO 已完成本轮基本功能实测；CS2 配置保留现状，待后续测试。
+CS:GO 与 CS2 已完成本轮基本功能实测。
 
-CS:GO has passed this round of basic in-game checks. CS2 configs remain unchanged, pending further testing.
+CS:GO and CS2 have passed this round of basic in-game checks.
 
 ## CS:GO Legacy
 
@@ -53,21 +53,34 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 
 | 模式 / Mode | 文件 / File | 灵敏度 / Sensitivity |
 | --- | --- | --- |
-| Green | `cs2/cs2green.cfg` | 1.0 |
-| Bind | `cs2/cs2bind.cfg` | 2.7 |
+| Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | 2.70000000 |
+| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 沿用 Green / Inherited from Green |
 
-两种模式共用 KZ 检查点、传送、HUD 等功能及现有 Zerok 偏好。Bind 自动加载 Green，再应用自己的灵敏度和辅助开关。
+Green 管理原生移动、通用按键、mhud 和个人偏好。Bind 只覆盖自动松 W 所需的 W、滚轮向下及 P 返回入口，不重复加载通用设置。
 
-Both modes share KZ checkpoint, teleport, HUD bindings, and the existing Zerok preferences. Bind loads Green first, then applies its own sensitivity and assist toggles.
+Green manages native movement, shared keybinds, mhud, and personal preferences. Bind only overrides W, scroll-down, and the P return binding for automatic W release; it does not reload shared settings.
 
-| 按键 / Key | 功能 / Action | 加载 Bind 后 / On Bind load |
-| --- | --- | --- |
-| O | AD 节拍音 / A/D keypress sounds | 关闭 / OFF |
-| P | 滚轮起跳自动松 W / Automatic W release on wheel takeoff | 关闭 / OFF |
+首次使用先执行 `exec cs2kzgreen`。松开移动、跳跃和蹲伏键后按 P 进入 Bind，再按 P 重新加载 Green 并关闭辅助。
 
-自动松 W 已合并进 `cs2bind.cfg`，无需单独的 `cs2-w.cfg`。P 开启后，按 W 会为下一次向下滚轮起跳准备自动松 W；P 关闭后恢复普通 W 和向下滚轮跳跃。
+Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressing P to enter Bind. Press P again to reload Green and disable the assist.
 
-Automatic W release is included in `cs2bind.cfg`; no separate `cs2-w.cfg` is required. With P enabled, pressing W arms the next downward wheel takeoff to release W. Disabling P restores normal W movement and scroll-down jumping.
+| 按键 / Key | 功能 / Action |
+| --- | --- |
+| P | Green / Bind 模式切换 / Switch Green / Bind |
+| O | AD 节拍音开关 / Toggle A/D keypress sounds |
+| G | `sw_nv` 夜视开关，依赖服务器插件 / Toggle night vision; requires the server plugin |
+| L | Gamma 1.0 / 1.8 / 2.2 / 2.6 循环切换 / Cycle gamma values |
+| Mouse2 | 按住蹲伏 / Hold to duck |
+| J | `kz_jsalways`，直接执行控制台命令 / Execute the console command directly |
+| Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 / Hold for Zed meme voice keys; release to restore KZ number keys |
+
+加载 Green 时 O 默认关闭；进入 Bind 时保持当前节拍音状态。Bind 中按 W 会为下一次向下滚轮起跳准备自动松 W。
+
+Loading Green resets A/D sounds to OFF; entering Bind preserves their current state. In Bind, pressing W arms the next downward wheel takeoff to release W.
+
+E 不打开购买菜单，Mouse3 保留玩家标记。配置不管理 F5/F6/F7/8 和 Mouse4/Mouse5，也不配置 `sw_nvs`。
+
+E does not open the buy menu, and Mouse3 retains player ping. These configs do not manage F5/F6/F7/8 or Mouse4/Mouse5, and do not configure `sw_nvs`.
 
 ## 安装与加载 / Installation and loading
 
@@ -77,21 +90,21 @@ Automatic W release is included in `cs2bind.cfg`; no separate `cs2-w.cfg` is req
 2. CS:GO：将 `csgo/` 内的 `csgokzgreen.cfg` 和 `csgokzbind.cfg` 复制到实际运行的 CS:GO Legacy 的 `csgo/cfg/` 目录。CS2：将 `cs2/` 内两份 cfg 复制到对应游戏 cfg 目录。  
    For CS:GO, copy `csgokzgreen.cfg` and `csgokzbind.cfg` from `csgo/` into the `csgo/cfg/` directory of your active CS:GO Legacy installation. For CS2, copy both files from `cs2/` into its cfg directory.
 
-3. 打开游戏控制台，执行下方命令；CS:GO 使用 P 切换，CS2 使用 Mouse4 / Mouse5 切换。  
-   Run the appropriate command below in the game console. Switch CS:GO modes with P and CS2 modes with Mouse4 / Mouse5.
+3. 打开游戏控制台，执行下方命令；两款游戏均使用 P 切换。  
+   Run the appropriate command below in the game console. Switch modes in either game with P.
 
 | 游戏 / Game | 加载 Green / Load Green | 加载 Bind / Load Bind |
 | --- | --- | --- |
 | CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
-| CS2 | `exec cs2green` | `exec cs2bind` |
+| CS2 | `exec cs2kzgreen` | 先加载 Green，再按 P / Load Green first, then press P |
 
 CS:GO 若需启动默认 Green，将 `csgo/autoexec.cfg` 放入同一目录；如果已有 autoexec，只在原文件末尾添加 `exec csgokzgreen`，保留原有设置。游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
 To start CS:GO in Green, place `csgo/autoexec.cfg` in the same directory. If you already have an autoexec, preserve it and append `exec csgokzgreen`. If the game is running, execute `exec csgokzgreen` once to load the update.
 
-CS2 的 Bind 会调用同目录的 Green，两份文件需一起安装。
+CS2 的两份文件需一起安装；Bind 不会自动调用 Green，首次加载请使用 Green 入口。
 
-CS2 Bind loads Green from the same directory; install both files together.
+Install both CS2 files together. Bind does not automatically load Green; use the Green entry for initial setup.
 
 ## 使用说明 / Usage notes
 
@@ -101,8 +114,8 @@ CS2 Bind loads Green from the same directory; install both files together.
 - O 的“节拍音”是在按下 A/D 时各播放一次提示音，不是固定 BPM 的循环节拍器。  
   O plays one sound per A/D keypress; it is not a looping fixed-BPM metronome.
 
-- 加载模式会重设该模式的灵敏度，并关闭可选开关。切换后若移动中断，松开再按移动键。  
-  Loading a mode reapplies its sensitivity and resets optional toggles. If movement stops during a switch, release and press the movement key again.
+- CS:GO 加载模式会重设灵敏度和可选开关；CS2 仅加载 Green 时重设灵敏度并关闭节拍音。切换后若移动中断，松开再按移动键。  
+  CS:GO mode loads reset sensitivity and optional toggles; CS2 only resets sensitivity and A/D sounds when loading Green. If movement stops during a switch, release and press the movement key again.
 
 - 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。  
   Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules.
@@ -116,9 +129,11 @@ CS2 Bind loads Green from the same directory; install both files together.
 | --- | --- |
 | `csgogreen.cfg` | `csgo/csgokzgreen.cfg` |
 | `csgobind.cfg` | `csgo/csgokzbind.cfg` |
-| `cs2mg.cfg` | `cs2/cs2green.cfg` |
-| `cs2kz.cfg` | `cs2/cs2bind.cfg` |
-| `cs2-w.cfg` | 合并进 / Merged into `cs2/cs2bind.cfg` |
+| `cs2mg.cfg` | `cs2/cs2kzgreen.cfg` |
+| `cs2green.cfg` | `cs2/cs2kzgreen.cfg` |
+| `cs2bind.cfg` | `cs2/cs2kzbind.cfg` |
+| `cs2kz.cfg` | `cs2/cs2kzbind.cfg` |
+| `cs2-w.cfg` | 合并进 / Merged into `cs2/cs2kzbind.cfg` |
 
 旧的 `csgokz.cfg` 兼容入口已移除。如使用启动项或其他 cfg 调用旧文件名，请改成上面的新命令。
 
