@@ -4,9 +4,17 @@
 
 Personal CS:GO / CS2 KZ configs, organized into Green (native movement) and Bind (assisted binds).
 
-## 简介 / Overview
+CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。
 
-CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。CS:GO 的启动入口默认加载 Green；CS2 首次使用先执行 `exec cs2kzgreen`。
+Both games use **P to switch Green / Bind**.
+
+CS:GO 通过 `autoexec.cfg` 自动加载，请将本项目的 `autoexec.cfg` 中的内容复制进您的 `autoexec.cfg` 中使用（**注意可能会和您原有的 cfg 冲突**）。
+
+CS:GO loads automatically through `autoexec.cfg`. Copy the contents of this project's `autoexec.cfg` into your own `autoexec.cfg` (**these settings may conflict with your existing configs**).
+
+CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec.cfg`。
+
+For CS2, manually run `exec cs2kzgreen` in the console before first use. No `autoexec.cfg` is required.
 
 ## 使用说明 / Usage notes
 
@@ -15,12 +23,6 @@ CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。CS:GO 的启动入口默认�
 
 - **配置包含个人灵敏度、键位及 Zerok 偏好，使用前请按自己的习惯调整。**  
   **These configs include personal sensitivity, keybinds, and Zerok preferences. Adjust them to your needs.**
-
-- O 的“节拍音”是在按下 A/D 时各播放一次提示音，不是固定 BPM 的循环节拍器。  
-  O plays one sound per A/D keypress; it is not a looping fixed-BPM metronome.
-
-- CS:GO 加载模式会重设灵敏度和可选开关；CS2 仅加载 Green 时重设灵敏度并关闭节拍音。切换后若移动中断，松开再按移动键。  
-  CS:GO mode loads reset sensitivity and optional toggles; CS2 only resets sensitivity and A/D sounds when loading Green. If movement stops during a switch, release and press the movement key again.
 
 - 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。  
   Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules.
@@ -57,14 +59,14 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 - **2tick 大跳：**按 K 开启，先按 E 重置蹲伏状态，再正常向上滚动滚轮即可触发。**每次触发前都需要先按 E 重置。**再次按 K 关闭后，滚轮向上恢复存点。  
   **2-tick crouch-jump:** Press K to enable it, press E to reset the duck state, then scroll up normally to trigger the jump. **Press E to reset before every attempt.** Press K again to disable it and restore scroll-up checkpoints.
 
-  此 bind 最初来源于我的 Steam 好友 [ss](https://steamcommunity.com/id/ausbb) 的分享，参见他的 [Bilibili 专栏](https://www.bilibili.com/opus/629511818986799065)。  
-  This bind was originally shared by my Steam friend [ss](https://steamcommunity.com/id/ausbb). See his [Bilibili article](https://www.bilibili.com/opus/629511818986799065).
+  感谢 [ss god](https://steamcommunity.com/id/ausbb) 的开源分享，原文件详细信息参见他的 [Bilibili 专栏](https://www.bilibili.com/opus/629511818986799065)。  
+  Thanks to [ss god](https://steamcommunity.com/id/ausbb) for sharing the source. For details about the original file, see his [Bilibili article](https://www.bilibili.com/opus/629511818986799065).
 
 - **WAD/SAD 适配 Null：**进入 Bind 模式即可启用，适配 WAD 和 SAD 按键组合，解决原先普通 Null 仅适用于 WA 或 WD 组合的使用限制。  
   **WAD/SAD-compatible null binds:** Enter Bind mode to enable support for WAD and SAD key combinations, extending the original basic null setup that only supported WA or WD combinations.
 
-  最初来源于我的 Steam 好友 [gus](https://steamcommunity.com/id/lbgdre) 在夺得第二届生肖杯冠军后，于生肖杯群内分享的 `null.cfg`、`newnull.cfg` 和 `unnull.cfg`。本项目将这三份配置合并整理，并补充了 SAD 适配。  
-  The original `null.cfg`, `newnull.cfg`, and `unnull.cfg` were shared by my Steam friend [gus](https://steamcommunity.com/id/lbgdre) in the Shengxiao Cup group after winning the second Shengxiao Cup. This project combines and organizes those three configs and adds SAD support.
+  感谢 [gus god](https://steamcommunity.com/id/lbgdre) 拿下 2023 年第二届生肖杯冠军后在生肖杯群内的开源分享：`null.cfg`、`newnull.cfg` 和 `unnull.cfg`。本项目仅将这三份配置合并整理，并补充了 SAD 适配。  
+  Thanks to [gus god](https://steamcommunity.com/id/lbgdre) for sharing the source configs `null.cfg`, `newnull.cfg`, and `unnull.cfg` in the Shengxiao Cup group after winning the second Shengxiao Cup in 2023. This project's changes are limited to combining and organizing those three configs and adding SAD support.
 
 ## CS2
 
@@ -100,8 +102,14 @@ E does not open the buy menu, and Mouse3 retains player ping. These configs do n
 1. 下载仓库：点击 **Code → Download ZIP**，解压。  
    Download the repository using **Code → Download ZIP**, then extract it.
 
-2. CS:GO：将 `csgo/` 内的 `csgokzgreen.cfg` 和 `csgokzbind.cfg` 复制到实际运行的 CS:GO Legacy 的 `csgo/cfg/` 目录。CS2：将 `cs2/` 内两份 cfg 复制到对应游戏 cfg 目录。  
-   For CS:GO, copy `csgokzgreen.cfg` and `csgokzbind.cfg` from `csgo/` into the `csgo/cfg/` directory of your active CS:GO Legacy installation. For CS2, copy both files from `cs2/` into its cfg directory.
+2. 打开 Steam 库，找到对应游戏，通过“管理 → 浏览本地文件”进入安装目录，再复制配置文件。下方路径中的 `…` 表示您自己的安装路径，具体盘符和 Steam 库位置可能不同。  
+   Open your Steam Library, find the game, and choose **Manage → Browse local files** to open its installation folder, then copy the configs. In the paths below, `…` represents your installation path; the drive and Steam library location may vary.
+
+   **CS:GO：**右键点击您的 **Counter-Strike: Global Offensive**，选择“管理 → 浏览本地文件”。打开的目录应为 `…\steam\steamapps\common\csgo legacy`。依次进入 `csgo` → `cfg`，将解压后 `csgo/` 文件夹中的 `csgokzgreen.cfg` 和 `csgokzbind.cfg` 放入 `…\steam\steamapps\common\csgo legacy\csgo\cfg`。  
+   **CS:GO:** Right-click **Counter-Strike: Global Offensive** and select **Manage → Browse local files**. The folder should be `…\steam\steamapps\common\csgo legacy`. Open `csgo` → `cfg`, then copy `csgokzgreen.cfg` and `csgokzbind.cfg` from the extracted `csgo/` folder into `…\steam\steamapps\common\csgo legacy\csgo\cfg`.
+
+   **CS2：**同样在 Steam 库中右键点击 **Counter-Strike 2**，选择“管理 → 浏览本地文件”，再依次进入 `game` → `csgo` → `cfg`。将解压后 `cs2/` 文件夹中的 `cs2kzgreen.cfg` 和 `cs2kzbind.cfg` 放入 `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`。  
+   **CS2:** Right-click **Counter-Strike 2** in your Steam Library, select **Manage → Browse local files**, then open `game` → `csgo` → `cfg`. Copy `cs2kzgreen.cfg` and `cs2kzbind.cfg` from the extracted `cs2/` folder into `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`.
 
 3. 打开游戏控制台，执行下方命令；两款游戏均使用 P 切换。  
    Run the appropriate command below in the game console. Switch modes in either game with P.
