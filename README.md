@@ -20,7 +20,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
   HUD 的作者是 zer0k，具体配置由各位玩家自行定义。本项目保存的是我个人的 HUD 偏好设置，您可以按自己的习惯调整并导出。设置默认通过 API 保存，但有时可能未正确加载，因此我将其导出并保存在 cfg 中，方便恢复自己的设置，无需每次手动调整。
 
-- 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。
+- 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。部分服务器可能禁止使用相关 Bind 命令，请在使用前查阅并遵守对应服务器的规则。因违反服务器规则而导致的封禁，由使用者自行承担责任。部分 Bind 功能也可能在 Valve 更新游戏后失效，本项目不保证其能够长期稳定使用。
 
 ### CS:GO Legacy
 
@@ -79,24 +79,33 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 ### 安装与加载
 
-1. 下载仓库：点击 **Code → Download ZIP**，解压。
+只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。
 
-2. 打开 Steam 库，找到对应游戏，通过“管理 → 浏览本地文件”进入安装目录，再复制配置文件。下方路径中的 `…` 表示您自己的安装路径，具体盘符和 Steam 库位置可能不同。
+1. 打开本项目中对应游戏的目录，分别打开下列两份 cfg 文件，复制文件中的全部内容。每份文件单独复制、单独保存，不要将两份内容合在一起。
 
-   **CS:GO：**右键点击您的 **Counter-Strike: Global Offensive**，选择“管理 → 浏览本地文件”。打开的目录应为 `…\steam\steamapps\common\csgo legacy`。依次进入 `csgo` → `cfg`，将解压后 `csgo/` 文件夹中的 `csgokzgreen.cfg` 和 `csgokzbind.cfg` 放入 `…\steam\steamapps\common\csgo legacy\csgo\cfg`。
+   **CS:GO：**[csgo 目录](csgo/)中的 [csgokzgreen.cfg](csgo/csgokzgreen.cfg) 和 [csgokzbind.cfg](csgo/csgokzbind.cfg)。
 
-   **CS2：**同样在 Steam 库中右键点击 **Counter-Strike 2**，选择“管理 → 浏览本地文件”，再依次进入 `game` → `csgo` → `cfg`。将解压后 `cs2/` 文件夹中的 `cs2kzgreen.cfg` 和 `cs2kzbind.cfg` 放入 `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`。
+   **CS2：**[cs2 目录](cs2/)中的 [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) 和 [cs2kzbind.cfg](cs2/cs2kzbind.cfg)。
 
-3. 打开游戏控制台，执行下方命令；两款游戏均使用 P 切换。
+2. 在 Steam 库中右键点击对应游戏，选择“管理 → 浏览本地文件”，进入下列目录。路径中的 `…` 表示您自己的安装位置，盘符和 Steam 库位置可能不同。
+
+   **CS:GO：**右键点击 **Counter-Strike: Global Offensive**，打开的目录应为 `…\steam\steamapps\common\csgo legacy`。再进入 `csgo` → `cfg`，目标目录为 `…\steam\steamapps\common\csgo legacy\csgo\cfg`。
+
+   **CS2：**右键点击 **Counter-Strike 2**，再进入 `game` → `csgo` → `cfg`，目标目录为 `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`。
+
+3. 打开记事本，粘贴一份 cfg 的完整内容，选择“文件 → 另存为”。保存位置选择上一步的游戏 `cfg` 目录，文件名与项目中的文件名保持一致，例如 `cs2kzgreen.cfg`；**“保存类型”选择“所有文件”，编码选择 UTF-8，确保文件名不是 `cs2kzgreen.cfg.txt`。**用同样的方法保存另一份 cfg。如果已有同名文件，先备份再替换。
+
+4. 打开游戏控制台，执行对应命令；两款游戏均使用 **P** 切换模式。
 
 | 游戏 | 加载 Green | 加载 Bind |
 | --- | --- | --- |
 | CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
 | CS2 | `exec cs2kzgreen` | 先加载 Green，再按 P |
 
-CS:GO 若需启动默认 Green，将 `csgo/autoexec.cfg` 放入同一目录；如果已有 autoexec，只在原文件末尾添加 `exec csgokzgreen`，保留原有设置。游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
+CS:GO 如需启动时自动加载 Green，打开本项目的 [autoexec.cfg](csgo/autoexec.cfg)，将内容复制到游戏同一 `cfg` 目录内的 `autoexec.cfg` 末尾。如果没有该文件，按上面的记事本方法创建。保留已有内容，并注意与原有配置的冲突；游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
-CS2 的两份文件需一起安装；Bind 不会自动调用 Green，首次加载请使用 Green 入口。
+CS2 无需 `autoexec.cfg`。两份配置需一起保存，首次加载请执行 `exec cs2kzgreen`，之后按 P 切换。
+
 
 ---
 
@@ -118,7 +127,7 @@ For CS2, manually run `exec cs2kzgreen` in the console before first use. No `aut
 
   The HUD was developed by zer0k, and each player customizes their own configuration. This project includes my personal HUD preferences, which you can adjust and export to suit your needs. Settings are normally saved through an API, but may occasionally fail to load correctly. I therefore keep an exported copy in the cfg to restore my setup without having to adjust everything manually each time.
 
-- Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules.
+- Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules. Some servers may prohibit these binds; read and follow the rules of each server before using them. Users are solely responsible for bans resulting from violations of server rules. Some bind features may also stop working after Valve updates the game, and this project does not guarantee that they will remain functional or reliable over time.
 
 ### CS:GO Legacy
 
@@ -177,21 +186,29 @@ Loading Green resets A/D sounds to OFF; entering Bind preserves their current st
 
 ### Installation and loading
 
-1. Download the repository using **Code → Download ZIP**, then extract it.
+Copy only the configs for the game you play. There is no need to download or extract the entire repository.
 
-2. Open your Steam Library, find the game, and choose **Manage → Browse local files** to open its installation folder, then copy the configs. In the paths below, `…` represents your installation path; the drive and Steam library location may vary.
+1. Open the relevant game folder in this project, then open each of the two cfg files below and copy its full contents. Copy and save each file separately; do not combine them.
 
-   **CS:GO:** Right-click **Counter-Strike: Global Offensive** and select **Manage → Browse local files**. The folder should be `…\steam\steamapps\common\csgo legacy`. Open `csgo` → `cfg`, then copy `csgokzgreen.cfg` and `csgokzbind.cfg` from the extracted `csgo/` folder into `…\steam\steamapps\common\csgo legacy\csgo\cfg`.
+   **CS:GO:** [csgokzgreen.cfg](csgo/csgokzgreen.cfg) and [csgokzbind.cfg](csgo/csgokzbind.cfg) in the [csgo folder](csgo/).
 
-   **CS2:** Right-click **Counter-Strike 2** in your Steam Library, select **Manage → Browse local files**, then open `game` → `csgo` → `cfg`. Copy `cs2kzgreen.cfg` and `cs2kzbind.cfg` from the extracted `cs2/` folder into `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`.
+   **CS2:** [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) and [cs2kzbind.cfg](cs2/cs2kzbind.cfg) in the [cs2 folder](cs2/).
 
-3. Run the appropriate command below in the game console. Switch modes in either game with P.
+2. Right-click the relevant game in your Steam Library and select **Manage → Browse local files**, then navigate to the folder below. In these paths, `…` represents your installation location; the drive and Steam library location may vary.
+
+   **CS:GO:** Right-click **Counter-Strike: Global Offensive**. The folder should be `…\steam\steamapps\common\csgo legacy`. Open `csgo` → `cfg`; the destination is `…\steam\steamapps\common\csgo legacy\csgo\cfg`.
+
+   **CS2:** Right-click **Counter-Strike 2**, then open `game` → `csgo` → `cfg`. The destination is `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`.
+
+3. Open Notepad, paste the full contents of one cfg, and choose **File → Save As**. Save it in the game's `cfg` folder from the previous step, using the exact filename from this project, such as `cs2kzgreen.cfg`. **Set “Save as type” to “All files” and encoding to UTF-8. Make sure the filename is not `cs2kzgreen.cfg.txt`.** Repeat for the other cfg. Back up any existing files with the same names before replacing them.
+
+4. Open the game console and run the appropriate command below. Use **P** to switch modes in either game.
 
 | Game | Load Green | Load Bind |
 | --- | --- | --- |
 | CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
 | CS2 | `exec cs2kzgreen` | Load Green first, then press P |
 
-To start CS:GO in Green, place `csgo/autoexec.cfg` in the same directory. If you already have an autoexec, preserve it and append `exec csgokzgreen`. If the game is running, execute `exec csgokzgreen` once to load the update.
+To load Green automatically when CS:GO starts, open this project's [autoexec.cfg](csgo/autoexec.cfg) and append its contents to `autoexec.cfg` in the same game `cfg` folder. If the file does not exist, create it using the Notepad steps above. Preserve existing content and check for conflicts with your own configs. If the game is already running, execute `exec csgokzgreen` once to load the update.
 
-Install both CS2 files together. Bind does not automatically load Green; use the Green entry for initial setup.
+CS2 does not require `autoexec.cfg`. Save both configs, run `exec cs2kzgreen` for the initial load, then use P to switch modes.
