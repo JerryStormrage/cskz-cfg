@@ -45,7 +45,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 - **P 只切换模式**，不单独开关自动松 W。进入 Bind 即启用右键辅助；返回 Green 后右键恢复普通蹲伏。
 
-- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换；相关服务器命令需要插件支持。
+- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换，以及 J 持续跳跃统计开关（`sm_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。
 
 - **2tick 大跳：**按 K 开启，先按 E 重置蹲伏状态，再正常向上滚动滚轮即可触发。**每次触发前都需要先按 E 重置。**再次按 K 关闭后，滚轮向上恢复存点。
 
@@ -60,7 +60,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | 模式 | 文件 | 用途 |
 | --- | --- | --- |
 | Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | 原生移动 |
-| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 滚轮向下起跳并自动松 W |
+| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 目前仅支持滚轮向下起跳并自动松 W，其他 Bind 功能待日后研究整理 |
 
 首次使用先执行 `exec cs2kzgreen`。松开移动、跳跃和蹲伏键后按 P 进入 Bind，再按 P 重新加载 Green 并关闭辅助。
 
@@ -71,8 +71,9 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | G | `sw_nv` 夜视开关，依赖服务器插件 |
 | L | Gamma 1.0 / 1.8 / 2.2 / 2.6 循环切换 |
 | Mouse2 | 按住蹲伏 |
-| J | `kz_jsalways`，直接执行控制台命令 |
 | Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 |
+
+两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD/玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。
 
 加载 Green 时 O 默认关闭；进入 Bind 时保持当前节拍音状态。Bind 中按 W 会为下一次向下滚轮起跳准备自动松 W。
 
@@ -96,20 +97,6 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 CS:GO 若需启动默认 Green，将 `csgo/autoexec.cfg` 放入同一目录；如果已有 autoexec，只在原文件末尾添加 `exec csgokzgreen`，保留原有设置。游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
 CS2 的两份文件需一起安装；Bind 不会自动调用 Green，首次加载请使用 Green 入口。
-
-### 文件名变更
-
-| 旧文件 | 新文件 |
-| --- | --- |
-| `csgogreen.cfg` | `csgo/csgokzgreen.cfg` |
-| `csgobind.cfg` | `csgo/csgokzbind.cfg` |
-| `cs2mg.cfg` | `cs2/cs2kzgreen.cfg` |
-| `cs2green.cfg` | `cs2/cs2kzgreen.cfg` |
-| `cs2bind.cfg` | `cs2/cs2kzbind.cfg` |
-| `cs2kz.cfg` | `cs2/cs2kzbind.cfg` |
-| `cs2-w.cfg` | 合并进 `cs2/cs2kzbind.cfg` |
-
-旧的 `csgokz.cfg` 兼容入口已移除。如使用启动项或其他 cfg 调用旧文件名，请改成上面的新命令。
 
 ---
 
@@ -156,7 +143,7 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 
 - **P only switches modes.** The Mouse2 assist is active in Bind; returning to Green restores ordinary ducking.
 
-- Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, and H to toggle the HUD. Server commands require plugin support.
+- Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD, and J to toggle always-on jumpstats (`sm_jsalways`, executed directly as a console command). Server commands require plugin support.
 
 - **2-tick crouch-jump:** Press K to enable it, press E to reset the duck state, then scroll up normally to trigger the jump. **Press E to reset before every attempt.** Press K again to disable it and restore scroll-up checkpoints.
 
@@ -171,7 +158,7 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 | Mode | File | Purpose |
 | --- | --- | --- |
 | Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | Native movement |
-| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Scroll-down jumps with automatic W release |
+| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Currently only supports scroll-down jumps with automatic W release; other bind features will be explored and organized in the future |
 
 Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressing P to enter Bind. Press P again to reload Green and disable the assist.
 
@@ -182,8 +169,9 @@ Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressi
 | G | Toggle night vision; requires the server plugin |
 | L | Cycle gamma: 1.0 / 1.8 / 2.2 / 2.6 |
 | Mouse2 | Hold to duck |
-| J | Execute the console command directly |
 | Z | Hold for Zed meme voice keys; release to restore KZ number keys |
+
+Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD and player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Server commands require plugin support.
 
 Loading Green resets A/D sounds to OFF; entering Bind preserves their current state. In Bind, pressing W arms the next downward wheel takeoff to release W.
 
@@ -207,17 +195,3 @@ Loading Green resets A/D sounds to OFF; entering Bind preserves their current st
 To start CS:GO in Green, place `csgo/autoexec.cfg` in the same directory. If you already have an autoexec, preserve it and append `exec csgokzgreen`. If the game is running, execute `exec csgokzgreen` once to load the update.
 
 Install both CS2 files together. Bind does not automatically load Green; use the Green entry for initial setup.
-
-### Renamed files
-
-| Previous file | Current file |
-| --- | --- |
-| `csgogreen.cfg` | `csgo/csgokzgreen.cfg` |
-| `csgobind.cfg` | `csgo/csgokzbind.cfg` |
-| `cs2mg.cfg` | `cs2/cs2kzgreen.cfg` |
-| `cs2green.cfg` | `cs2/cs2kzgreen.cfg` |
-| `cs2bind.cfg` | `cs2/cs2kzbind.cfg` |
-| `cs2kz.cfg` | `cs2/cs2kzbind.cfg` |
-| `cs2-w.cfg` | Merged into `cs2/cs2kzbind.cfg` |
-
-The old `csgokz.cfg` compatibility entry has been removed. Update any launch options or other configs that reference old filenames.
