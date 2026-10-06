@@ -79,7 +79,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | Mouse2 | 按住蹲伏 |
 | Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 |
 
-两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD/玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。
+两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H 玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。H 不再切换游戏 HUD，各元素的显示请在 HUD 设置中单独调整。
 
 加载 Green 时 O 默认关闭；进入 Bind 时保持当前节拍音状态。Bind 中按 W 会为下一次向下滚轮起跳准备自动松 W。
 
@@ -194,7 +194,7 @@ Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressi
 | Mouse2 | Hold to duck |
 | Z | Hold for Zed meme voice keys; release to restore KZ number keys |
 
-Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD and player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Server commands require plugin support.
+Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Server commands require plugin support. H no longer toggles the game HUD; adjust individual elements in the HUD settings.
 
 Loading Green resets A/D sounds to OFF; entering Bind preserves their current state. In Bind, pressing W arms the next downward wheel takeoff to release W.
 
