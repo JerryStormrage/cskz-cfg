@@ -24,7 +24,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 - **CS2 必需启动项：在 KZ 服务器内执行本项目 cfg、通过 P 切换模式前，请先在 Steam 库右键 Counter-Strike 2 →“属性”→“通用”→“启动选项”中添加 `-disable_workshop_command_filtering`，然后重启游戏。**已有启动项请保留，用空格分隔后追加。该参数用于关闭创意工坊地图的命令过滤，应填写在启动选项中，不是输入控制台或写进 cfg。参见 [CS2KZ 使用指南](https://cs2kz.org/servers)。
 
-- **CS2 的 KZ 操作通过 cfg 直接绑定按键实现，不再使用默认 Z/X/C 打开的 radio 菜单入口。**数字键 1–7 分别用于存点、传送、上一检查点、下一检查点、撤销、暂停和重开；X、C 改为喷涂和清贴花。这是直接绑定菜单中的常用功能，并非重新创建一个 radio 菜单。
+- **CS2 的 KZ 操作通过 cfg 直接绑定按键实现，不再使用默认 Z/X/C 打开的 radio 菜单入口。**数字键 1–7 分别用于存点、传送、上一检查点、下一检查点、撤销、暂停和重开；X、C 改为自动喷涂开关和清贴花。这是直接绑定菜单中的常用功能，并非重新创建一个 radio 菜单。
 
 - Z 键的 **Zed meme 语音**是我额外加入的可选配置，其他服务器不一定支持。不需要时，可在 `cs2kzgreen.cfg` 中删除“Zed 服务器 meme 语音”注释下的两条 `alias`（`+kz_radio`、`-kz_radio`）及 `bind z +kz_radio`。如果已经加载过该配置，还需在控制台执行一次 `unbind z`，或自行将 Z 重新绑定为所需功能；仅从文件中删除内容不会清除游戏中已有的绑定。
 
@@ -79,7 +79,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | Mouse2 | 默认副攻击 |
 | Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 |
 
-两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H 玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。H 不再切换游戏 HUD，各元素的显示请在 HUD 设置中单独调整。
+两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 自动喷涂开关、H 玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。按一次 X 开启自动喷涂，再按一次关闭。H 不再切换游戏 HUD，各元素的显示请在 HUD 设置中单独调整。
 
 加载 Green 时 O 默认关闭；进入 Bind 时保持当前节拍音状态。Bind 中按 W 会为下一次向下滚轮起跳准备自动松 W。
 
@@ -139,7 +139,7 @@ For CS2, manually run `exec cs2kzgreen` in the console before first use. No `aut
 
 - **Required CS2 launch option: before executing these configs on a KZ server or switching modes with P, right-click Counter-Strike 2 in your Steam Library → Properties → General → Launch Options, add `-disable_workshop_command_filtering`, and restart the game.** Preserve existing options and separate them with a space. This disables Workshop map command filtering; enter it in Launch Options, not in the console or a cfg file. See the [CS2KZ guide](https://cs2kz.org/servers).
 
-- **In CS2, this cfg binds KZ actions directly to keys instead of using the default Z/X/C radio menu shortcuts.** Keys 1–7 perform checkpoint, teleport, previous checkpoint, next checkpoint, undo, pause, and restart. X and C are rebound to paint and clear decals. These binds provide direct access to common menu actions; they do not create a replacement radio menu.
+- **In CS2, this cfg binds KZ actions directly to keys instead of using the default Z/X/C radio menu shortcuts.** Keys 1–7 perform checkpoint, teleport, previous checkpoint, next checkpoint, undo, pause, and restart. X and C are rebound to toggle auto paint and clear decals. These binds provide direct access to common menu actions; they do not create a replacement radio menu.
 
 - The **Zed meme voice** binding on Z is an optional addition of mine and may not work on other servers. To remove it, delete the two aliases (`+kz_radio` and `-kz_radio`) and `bind z +kz_radio` under the Zed meme voice comment in `cs2kzgreen.cfg`. If you have already loaded the config, also run `unbind z` once in the console, or rebind Z to your preferred action; deleting lines from the file does not clear an existing in-game binding.
 
@@ -194,7 +194,7 @@ Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressi
 | Mouse2 | Secondary attack |
 | Z | Hold for Zed meme voice keys; release to restore KZ number keys |
 
-Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Server commands require plugin support. H no longer toggles the game HUD; adjust individual elements in the HUD settings.
+Both modes retain G for night vision, N for noclip, C to clear decals, X to toggle auto paint, H to toggle player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Press X once to start auto painting and again to stop it. Server commands require plugin support. H no longer toggles the game HUD; adjust individual elements in the HUD settings.
 
 Loading Green resets A/D sounds to OFF; entering Bind preserves their current state. In Bind, pressing W arms the next downward wheel takeoff to release W.
 
