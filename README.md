@@ -2,6 +2,11 @@
 
 [中文](#中文) | [English](#english)
 
+## 更新记录 / Changelog
+
+- 2026-11-07：更新 CS2 个人 HUD 偏好；CS2 和 CS:GO KZ 增加 I 自由观察快捷键及 F8 鼠标攻击／蹲跳切换，新增对应切换配置。
+- 2026-11-07: Updated personal CS2 HUD preferences; added I for free-camera spectating and F8 to switch mouse attack/duck-jump bindings in CS2 and CS:GO KZ, with the required switch configs.
+
 ## 中文
 
 个人 CS:GO / CS2 KZ 配置，按 Green（原生移动）和 Bind（辅助绑定）区分。
@@ -43,6 +48,8 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | P | 切换到 Bind | 切换到 Green |
 | O | AD 节拍音开关，默认关闭 | AD 节拍音开关，默认关闭 |
 | Mouse2 | 默认副攻击 | 默认副攻击 |
+| I | 自由观察（需服务器支持） | 自由观察（需服务器支持） |
+| F8 | 切换左右键攻击 / 蹲跳 | 切换左右键攻击 / 蹲跳 |
 | K | 无绑定 | 2tick 大跳开关，默认关闭 |
 | E | 使用 | 使用；每次触发 2tick 大跳前按下，重置蹲伏状态 |
 | 滚轮向上 | 存点 | 2tick 关闭时存点；开启后，每次先按 E 再向上滚动触发大跳 |
@@ -77,6 +84,8 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | G | `sw_nv` 夜视开关，依赖服务器插件 |
 | L | Gamma 1.0 / 1.8 / 2.2 / 2.6 循环切换 |
 | Mouse2 | 默认副攻击 |
+| I | 自由观察（需服务器支持） |
+| F8 | 切换左右键攻击 / 蹲跳 |
 | Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 |
 
 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 自动喷涂开关、H 玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。按一次 X 开启自动喷涂，再按一次关闭。H 不再切换游戏 HUD，各元素的显示请在 HUD 设置中单独调整。
@@ -85,7 +94,9 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 ### 安装与加载
 
-只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。
+
+
+只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。使用 F8 前，还需将该游戏目录中的两个 `*kzmouse_move.cfg` 和 `*kzmouse_attack.cfg` 文件复制到游戏 cfg 目录；切换前松开鼠标左右键。加载 Green 或 Bind 会恢复默认攻击。
 
 1. 打开本项目中对应游戏的目录，分别打开下列两份 cfg 文件，复制文件中的全部内容。每份文件单独复制、单独保存，不要将两份内容合在一起。
 
@@ -113,6 +124,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 CS:GO 如需启动时自动加载 Green，打开本项目的 [autoexec.cfg](csgo/autoexec.cfg)，将内容复制到游戏同一 `cfg` 目录内的 `autoexec.cfg` 末尾。如果没有该文件，按上面的记事本方法创建。保留已有内容，并注意与原有配置的冲突；游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
 CS2 无需 `autoexec.cfg`。两份配置需一起保存，首次加载请执行 `exec cs2kzgreen`，之后按 P 切换。
+
 
 
 ---
@@ -158,6 +170,8 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 | P | Switch to Bind | Switch to Green |
 | O | Toggle A/D sounds, default OFF | Toggle A/D sounds, default OFF |
 | Mouse2 | Secondary attack | Secondary attack |
+| I | Free-camera spectate (server support required) | Free-camera spectate (server support required) |
+| F8 | Toggle mouse attack / duck-jump | Toggle mouse attack / duck-jump |
 | K | Unbound | Toggle 2-tick crouch-jumps, default OFF |
 | E | Use | Use; press before every 2-tick crouch-jump to reset the duck state |
 | Wheel up | Checkpoint | Checkpoint when OFF; when ON, press E before each scroll-up crouch-jump |
@@ -192,6 +206,8 @@ Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressi
 | G | Toggle night vision; requires the server plugin |
 | L | Cycle gamma: 1.0 / 1.8 / 2.2 / 2.6 |
 | Mouse2 | Secondary attack |
+| I | Free-camera spectate (server support required) |
+| F8 | Toggle mouse attack / duck-jump |
 | Z | Hold for Zed meme voice keys; release to restore KZ number keys |
 
 Both modes retain G for night vision, N for noclip, C to clear decals, X to toggle auto paint, H to toggle player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Press X once to start auto painting and again to stop it. Server commands require plugin support. H no longer toggles the game HUD; adjust individual elements in the HUD settings.
@@ -200,7 +216,9 @@ Loading Green resets A/D sounds to OFF; entering Bind preserves their current st
 
 ### Installation and loading
 
-Copy only the configs for the game you play. There is no need to download or extract the entire repository.
+
+
+Copy only the configs for the game you play. To use F8, also copy that game's two `*kzmouse_move.cfg` and `*kzmouse_attack.cfg` files to the game cfg folder. Release both mouse buttons before switching. Loading Green or Bind restores attack bindings.
 
 1. Open the relevant game folder in this project, then open each of the two cfg files below and copy its full contents. Copy and save each file separately; do not combine them.
 
@@ -228,3 +246,4 @@ Copy only the configs for the game you play. There is no need to download or ext
 To load Green automatically when CS:GO starts, open this project's [autoexec.cfg](csgo/autoexec.cfg) and append its contents to `autoexec.cfg` in the same game `cfg` folder. If the file does not exist, create it using the Notepad steps above. Preserve existing content and check for conflicts with your own configs. If the game is already running, execute `exec csgokzgreen` once to load the update.
 
 CS2 does not require `autoexec.cfg`. Save both configs, run `exec cs2kzgreen` for the initial load, then use P to switch modes.
+
