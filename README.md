@@ -4,6 +4,9 @@
 
 ## 更新记录 / Changelog
 
+- 2026-11-12：撤回 CS:GO 的 I、F8 快捷键及鼠标切换文件；CS2 功能保留。
+- 2026-11-12: Reverted the CS:GO I and F8 shortcuts and mouse switch configs; CS2 features remain.
+
 - 2026-11-07：更新 CS2 个人 HUD 偏好；CS2 和 CS:GO KZ 增加 I 自由观察快捷键及 F8 鼠标攻击／蹲跳切换，新增对应切换配置。
 - 2026-11-07: Updated personal CS2 HUD preferences; added I for free-camera spectating and F8 to switch mouse attack/duck-jump bindings in CS2 and CS:GO KZ, with the required switch configs.
 
@@ -48,13 +51,10 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | P | 切换到 Bind | 切换到 Green |
 | O | AD 节拍音开关，默认关闭 | AD 节拍音开关，默认关闭 |
 | Mouse2 | 默认副攻击 | 默认副攻击 |
-| I | 自由观察（需服务器支持） | 自由观察（需服务器支持） |
-| F8 | 切换左右键攻击 / 蹲跳 | 切换左右键攻击 / 蹲跳 |
 | K | 无绑定 | 2tick 大跳开关，默认关闭 |
 | E | 使用 | 使用；每次触发 2tick 大跳前按下，重置蹲伏状态 |
 | 滚轮向上 | 存点 | 2tick 关闭时存点；开启后，每次先按 E 再向上滚动触发大跳 |
 | 滚轮向下 | 普通跳跃 | 普通跳跃 |
-| Mouse4 / Mouse5 | 无绑定 | 无绑定 |
 
 - **P 只切换模式**，两种模式下右键均为副攻击。
 
@@ -96,7 +96,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 
 
-只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。使用 F8 前，还需将该游戏目录中的两个 `*kzmouse_move.cfg` 和 `*kzmouse_attack.cfg` 文件复制到游戏 cfg 目录；切换前松开鼠标左右键。加载 Green 或 Bind 会恢复默认攻击。
+只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。CS2 使用 F8 前，还需将 `cs2kzmouse_move.cfg` 和 `cs2kzmouse_attack.cfg` 复制到游戏 cfg 目录；切换前松开鼠标左右键。加载 Green 或 Bind 会恢复默认攻击。
 
 1. 打开本项目中对应游戏的目录，分别打开下列两份 cfg 文件，复制文件中的全部内容。每份文件单独复制、单独保存，不要将两份内容合在一起。
 
@@ -170,13 +170,10 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 | P | Switch to Bind | Switch to Green |
 | O | Toggle A/D sounds, default OFF | Toggle A/D sounds, default OFF |
 | Mouse2 | Secondary attack | Secondary attack |
-| I | Free-camera spectate (server support required) | Free-camera spectate (server support required) |
-| F8 | Toggle mouse attack / duck-jump | Toggle mouse attack / duck-jump |
 | K | Unbound | Toggle 2-tick crouch-jumps, default OFF |
 | E | Use | Use; press before every 2-tick crouch-jump to reset the duck state |
 | Wheel up | Checkpoint | Checkpoint when OFF; when ON, press E before each scroll-up crouch-jump |
 | Wheel down | Normal jump | Normal jump |
-| Mouse4 / Mouse5 | Unbound | Unbound |
 
 - **P only switches modes.** Mouse2 uses secondary attack in both modes.
 
@@ -218,7 +215,7 @@ Loading Green resets A/D sounds to OFF; entering Bind preserves their current st
 
 
 
-Copy only the configs for the game you play. To use F8, also copy that game's two `*kzmouse_move.cfg` and `*kzmouse_attack.cfg` files to the game cfg folder. Release both mouse buttons before switching. Loading Green or Bind restores attack bindings.
+Copy only the configs for the game you play. To use F8 in CS2, also copy `cs2kzmouse_move.cfg` and `cs2kzmouse_attack.cfg` to the game cfg folder. Release both mouse buttons before switching. Loading Green or Bind restores attack bindings.
 
 1. Open the relevant game folder in this project, then open each of the two cfg files below and copy its full contents. Copy and save each file separately; do not combine them.
 
