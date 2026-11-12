@@ -4,6 +4,9 @@
 
 ## 更新记录 / Changelog
 
+- 2026-11-12：恢复 CS:GO Green 右键蹲伏及 Bind 右键蹲跳并自动松 W。
+- 2026-11-12: Restored CS:GO Mouse2 duck in Green and crouch-jump with automatic W release in Bind.
+
 - 2026-11-12：撤回 CS:GO 的 I、F8 快捷键及鼠标切换文件；CS2 功能保留。
 - 2026-11-12: Reverted the CS:GO I and F8 shortcuts and mouse switch configs; CS2 features remain.
 
@@ -50,13 +53,13 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | --- | --- | --- |
 | P | 切换到 Bind | 切换到 Green |
 | O | AD 节拍音开关，默认关闭 | AD 节拍音开关，默认关闭 |
-| Mouse2 | 默认副攻击 | 默认副攻击 |
+| Mouse2 | 按住蹲伏 | 蹲跳并自动松 W |
 | K | 无绑定 | 2tick 大跳开关，默认关闭 |
 | E | 使用 | 使用；每次触发 2tick 大跳前按下，重置蹲伏状态 |
 | 滚轮向上 | 存点 | 2tick 关闭时存点；开启后，每次先按 E 再向上滚动触发大跳 |
 | 滚轮向下 | 普通跳跃 | 普通跳跃 |
 
-- **P 只切换模式**，两种模式下右键均为副攻击。
+- **P 只切换模式**：Bind 使用右键蹲跳并自动松 W；Green 的右键为普通蹲伏。
 
 - 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换，以及 J 持续跳跃统计开关；相关服务器命令需要插件支持。
 
@@ -169,13 +172,13 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 | --- | --- | --- |
 | P | Switch to Bind | Switch to Green |
 | O | Toggle A/D sounds, default OFF | Toggle A/D sounds, default OFF |
-| Mouse2 | Secondary attack | Secondary attack |
+| Mouse2 | Hold to duck | Crouch-jump with automatic W release |
 | K | Unbound | Toggle 2-tick crouch-jumps, default OFF |
 | E | Use | Use; press before every 2-tick crouch-jump to reset the duck state |
 | Wheel up | Checkpoint | Checkpoint when OFF; when ON, press E before each scroll-up crouch-jump |
 | Wheel down | Normal jump | Normal jump |
 
-- **P only switches modes.** Mouse2 uses secondary attack in both modes.
+- **P only switches modes.** Mouse2 crouch-jumps and releases W in Bind; it ducks normally in Green.
 
 - Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD, and J to toggle always-on jumpstats. Server commands require plugin support.
 
