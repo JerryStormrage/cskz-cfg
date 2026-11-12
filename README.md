@@ -9,7 +9,6 @@
 
 - 2026-11-12：撤回 CS:GO 的 I、F8 快捷键及鼠标切换文件；CS2 功能保留。
 - 2026-11-12: Reverted the CS:GO I and F8 shortcuts and mouse switch configs; CS2 features remain.
-
 - 2026-11-07：更新 CS2 个人 HUD 偏好；CS2 和 CS:GO KZ 增加 I 自由观察快捷键及 F8 鼠标攻击／蹲跳切换，新增对应切换配置。
 - 2026-11-07: Updated personal CS2 HUD preferences; added I for free-camera spectating and F8 to switch mouse attack/duck-jump bindings in CS2 and CS:GO KZ, with the required switch configs.
 
@@ -21,7 +20,7 @@ CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。
 
 CS:GO 通过 `autoexec.cfg` 自动加载，请将本项目的 `autoexec.cfg` 中的内容复制进您的 `autoexec.cfg` 中使用（**注意可能会和您原有的 cfg 冲突**）。
 
-CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec.cfg`。
+CS2 每次启动后请在控制台手动执行 `exec cs2kzgreen`；也可自行配置 `autoexec.cfg` 自动加载。
 
 ### 使用说明
 
@@ -78,7 +77,7 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 | Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | 原生移动 |
 | Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 目前仅支持滚轮向下起跳并自动松 W，其他 Bind 功能待日后研究整理 |
 
-首次使用先执行 `exec cs2kzgreen`。松开移动、跳跃和蹲伏键后按 P 进入 Bind，再按 P 重新加载 Green 并关闭辅助。
+每次启动 CS2 后先执行 `exec cs2kzgreen`。松开移动、跳跃和蹲伏键后按 P 进入 Bind，再按 P 重新加载 Green 并关闭辅助。
 
 | 按键 | 功能 |
 | --- | --- |
@@ -97,7 +96,9 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 ### 安装与加载
 
+CS2 可选安装 [cs2mg.cfg](cs2/cs2mg.cfg)：KZ Green/Bind 中按主键盘 **0** 进入 MG，MG 中按 **0 或 P** 返回 KZ Green；KZ 中 P 仍切换 Green/Bind。切换前先松开移动、跳跃、蹲伏和 Z 键。
 
+MG 默认灵敏度 1.0，8 切换 1.0/0.45，右键为副攻击，数字键恢复武器槽位；F5/F6/F7 保留 ZE 快捷购买，需服务器支持。返回 KZ Green 时恢复灵敏度 2.7、KZ 按键并关闭 AD 提示音，同时解除 F5/F6/F7/8 的 MG 专用绑定。返回的是 Green 配置默认值，不是切换前临时调整的状态。此切换不重置服务器端的夜视、隐藏玩家等插件状态。
 
 只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。CS2 使用 F8 前，还需将 `cs2kzmouse_move.cfg` 和 `cs2kzmouse_attack.cfg` 复制到游戏 cfg 目录；切换前松开鼠标左右键。加载 Green 或 Bind 会恢复默认攻击。
 
@@ -126,8 +127,9 @@ CS2 首次使用先在控制台手动执行 `exec cs2kzgreen`，无需 `autoexec
 
 CS:GO 如需启动时自动加载 Green，打开本项目的 [autoexec.cfg](csgo/autoexec.cfg)，将内容复制到游戏同一 `cfg` 目录内的 `autoexec.cfg` 末尾。如果没有该文件，按上面的记事本方法创建。保留已有内容，并注意与原有配置的冲突；游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
 
-CS2 无需 `autoexec.cfg`。两份配置需一起保存，首次加载请执行 `exec cs2kzgreen`，之后按 P 切换。
+CS2 的 KZ 配置需一起保存，每次启动后手动执行 `exec cs2kzgreen`，之后按 P 切换；也可以自行设置 `autoexec.cfg` 自动加载。
 
+需要 MG 切换功能时，将 `cs2mg.cfg` 按相同方法额外保存到 CS2 的 cfg 目录；只安装两份 KZ 配置时，请勿使用 0 键的 MG 入口。
 
 
 ---
@@ -140,7 +142,7 @@ Both games use **P to switch Green / Bind**.
 
 CS:GO loads automatically through `autoexec.cfg`. Copy the contents of this project's `autoexec.cfg` into your own `autoexec.cfg` (**these settings may conflict with your existing configs**).
 
-For CS2, manually run `exec cs2kzgreen` in the console before first use. No `autoexec.cfg` is required.
+For CS2, run `exec cs2kzgreen` in the console after each launch, or configure `autoexec.cfg` to load it automatically.
 
 ### Usage notes
 
@@ -197,7 +199,7 @@ Both modes use **2.7 sensitivity** and initialize their own settings. Each switc
 | Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | Native movement |
 | Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Currently only supports scroll-down jumps with automatic W release; other bind features will be explored and organized in the future |
 
-Run `exec cs2kzgreen` first. Release movement, jump, and duck keys before pressing P to enter Bind. Press P again to reload Green and disable the assist.
+Run `exec cs2kzgreen` after starting CS2. Release movement, jump, and duck keys before pressing P to enter Bind. Press P again to reload Green and disable the assist.
 
 | Key | Action |
 | --- | --- |
@@ -216,7 +218,9 @@ Loading Green resets A/D sounds to OFF; entering Bind preserves their current st
 
 ### Installation and loading
 
+For CS2, optionally install [cs2mg.cfg](cs2/cs2mg.cfg). Press the main keyboard **0** in KZ Green/Bind to enter MG, then **0 or P** in MG to return to KZ Green. P still switches Green/Bind while in KZ. Release movement, jump, duck, and Z before switching.
 
+MG starts at sensitivity 1.0; 8 toggles 1.0/0.45, Mouse2 uses secondary attack, and number keys select weapon slots. F5/F6/F7 retain ZE purchase shortcuts that require server support. Returning to KZ Green restores sensitivity 2.7 and KZ binds, turns A/D sounds off, and unbinds the MG shortcuts on F5/F6/F7/8. This restores Green defaults, not temporary adjustments made before switching. Server-side plugin states such as night vision and player hiding are not reset.
 
 Copy only the configs for the game you play. To use F8 in CS2, also copy `cs2kzmouse_move.cfg` and `cs2kzmouse_attack.cfg` to the game cfg folder. Release both mouse buttons before switching. Loading Green or Bind restores attack bindings.
 
@@ -245,5 +249,6 @@ Copy only the configs for the game you play. To use F8 in CS2, also copy `cs2kzm
 
 To load Green automatically when CS:GO starts, open this project's [autoexec.cfg](csgo/autoexec.cfg) and append its contents to `autoexec.cfg` in the same game `cfg` folder. If the file does not exist, create it using the Notepad steps above. Preserve existing content and check for conflicts with your own configs. If the game is already running, execute `exec csgokzgreen` once to load the update.
 
-CS2 does not require `autoexec.cfg`. Save both configs, run `exec cs2kzgreen` for the initial load, then use P to switch modes.
+Save both CS2 KZ configs, run `exec cs2kzgreen` after each launch, then use P to switch modes. Alternatively, configure `autoexec.cfg` to load Green automatically.
 
+For MG switching, save `cs2mg.cfg` in the CS2 cfg folder using the same steps. If you only install the two KZ configs, do not use the MG shortcut on 0.
