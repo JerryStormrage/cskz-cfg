@@ -36,12 +36,15 @@
 
 | 按键 | 功能 |
 | --- | --- |
+| W / A / S / D | 前进／左移／后退／右移；Bind 中 W 还用于准备自动松 W |
+| 空格 / Ctrl / Shift | 跳跃／按住蹲伏／按住静步 |
+| E | 使用／交互；不打开购买菜单 |
+| Mouse1 / Mouse2 / Mouse3 | 默认主攻击／副攻击／玩家标记；F8 可切换左右键用途 |
 | P | 在 Green 和 Bind 之间切换自动松 W |
 | 0（主键盘） | 进入 MG；MG 中再次按 0 返回 Green |
 | O | AD 节拍音开关 |
 | `[` / `]` | 分别加载 HUD 第 1 / 2 部分，**仅在主菜单使用** |
 | F8 | 切换鼠标左右键的攻击／蹲跳 |
-| F10 | 游戏退出确认 |
 | 1 / 滚轮向上 | 保存检查点 |
 | 2 | 传送到检查点 |
 | 3 / 4 | 上一个／下一个检查点 |
@@ -57,13 +60,35 @@
 
 检查点、飞行、观察、夜视等命令需要服务器插件支持。Z 的 meme 语音仅为个人可选设置；不需要时，可删除 Green 文件中 `+kz_radio`、`-kz_radio` 和 `bind z +kz_radio`；如果已加载，还需在控制台执行 `unbind z` 或重新绑定 Z。
 
+按住 Z 时，1–6 临时对应“收到、否定、欢呼、守住、跟随、感谢”，7 临时解绑；松开 Z 后恢复 KZ 数字键。F8 切换到蹲跳后，鼠标左键为蹲伏、右键为跳跃；再次按 F8 恢复左右键攻击，切换前请松开鼠标左右键。
+
 P 从 Green 进入 Bind 时，按 W 会为下一次向下滚轮起跳准备自动松 W；再次按 P 只恢复普通 W 和滚轮跳跃，不重载完整 Green，因此保留当前灵敏度、AD 节拍音和鼠标状态。**切换前先松开移动、跳跃和蹲伏键。**完整加载 Green 时，节拍音默认关闭、鼠标恢复攻击。
 
 #### MG／竞技模式
 
 在 KZ 中按 **0** 进入 MG；MG 中按 **0** 返回 KZ Green。P 在 MG 中解绑，只负责 KZ 内的 Green／Bind 切换。切换前请松开移动、跳跃、蹲伏和 Z。
 
-MG 默认灵敏度 **1.0**，主键盘 **8** 在 1.0 / 0.45 之间切换；返回 KZ 后灵敏度恢复为 **2.7**，8 解绑。MG 恢复普通武器数字键、左右键攻击和 G 丢弃武器；F5/F6/F7 为 ZE 快捷购买，需要服务器支持。返回 Green 会解除这些 MG 专用绑定。
+MG 默认灵敏度 **1.0**，并使用以下配置中的按键：
+
+| 按键 | MG／竞技模式功能 |
+| --- | --- |
+| 0（主键盘） | 返回 KZ Green |
+| 8（主键盘） | 在灵敏度 1.0 / 0.45 之间切换 |
+| F5 | 发送 `!negev`，用于服务器的 ZE Negev 快捷购买 |
+| F6 | 发送 `!xz`，具体购买效果由服务器定义 |
+| F7 | 发送 `!he`，用于服务器的 ZE 手雷快捷购买 |
+| 1–7 | 切换武器／装备槽位 |
+| G | 丢弃武器 |
+| Z / C | 打开对应无线电菜单 |
+| X | 选择 `slot12`，通常用于医疗针 |
+| H | 隐藏玩家，需服务器插件支持 |
+| W / A / S / D、空格、Ctrl、Shift | 普通移动、跳跃、蹲伏和静步 |
+| 滚轮向上 / 向下 | 普通跳跃 |
+| E | 使用／交互；不打开购买菜单 |
+| Mouse1 / Mouse2 / Mouse3 | 主攻击／副攻击／玩家标记 |
+| L | 循环切换 Gamma 1.0 / 1.8 / 2.2 / 2.6 |
+
+F5/F6/F7 的聊天命令需要服务器支持。MG 中 P、N、I、J、O、F8 和 HUD 的 `[` / `]` 解绑。返回 Green 后灵敏度恢复为 **2.7**，8 和 F5/F6/F7 解绑。
 
 切换配置不会主动关闭服务器端已经开启的飞行、夜视、自动喷涂等状态。例如，进入 MG 后 N 已解绑，但先前开启的 KZ 飞行可能仍然开启；需要时可先返回 KZ，再按 N 关闭。
 
@@ -163,12 +188,15 @@ This project maintains separate personal KZ configs for **CS2** and **CS:GO Lega
 
 | Key | Action |
 | --- | --- |
+| W / A / S / D | Forward / left / back / right; W also arms automatic release in Bind |
+| Space / Ctrl / Shift | Jump / hold duck / hold walk |
+| E | Use / interact; does not open the buy menu |
+| Mouse1 / Mouse2 / Mouse3 | Default primary attack / secondary attack / player ping; F8 switches mouse buttons |
 | P | Toggle automatic W release between Green and Bind |
 | 0 (main keyboard) | Enter MG; press 0 in MG to return to Green |
 | O | Toggle A/D keypress sounds |
 | `[` / `]` | Load HUD parts 1 / 2 separately, **in the main menu only** |
 | F8 | Toggle mouse attack / duck-jump |
-| F10 | Game quit confirmation |
 | 1 / wheel up | Save checkpoint |
 | 2 | Teleport to checkpoint |
 | 3 / 4 | Previous / next checkpoint |
@@ -184,13 +212,35 @@ This project maintains separate personal KZ configs for **CS2** and **CS:GO Lega
 
 Checkpoint, noclip, spectate and night vision require server support. The Zed meme voice is optional: remove `+kz_radio`, `-kz_radio` and `bind z +kz_radio` from Green if unwanted; after loading it, also run `unbind z` or rebind Z.
 
+While Z is held, 1–6 temporarily become roger, negative, cheer, hold position, follow me and thanks; 7 is temporarily unbound. Releasing Z restores the KZ number keys. F8 switches the mouse to left-button duck and right-button jump; press F8 again to restore attack. Release both mouse buttons before switching.
+
 In Bind, pressing W arms the next downward wheel jump to release W. Pressing P again restores normal W and wheel jump without reloading the full Green cfg, preserving sensitivity, A/D sounds and mouse state. **Release movement, jump and duck before switching.** Loading the full Green cfg resets A/D sounds to off and restores mouse attack.
 
 #### MG / competitive
 
 Press **0** in KZ to enter MG, and **0** in MG to return to Green. P is unbound in MG and only switches Green/Bind in KZ. Release movement, jump, duck and Z before switching.
 
-MG starts at sensitivity **1.0**; main keyboard **8** toggles 1.0 / 0.45. Returning to Green restores **2.7** and unbinds 8. MG restores weapon number keys, mouse attack and G for drop; F5/F6/F7 are ZE purchase shortcuts requiring server support. Returning to Green clears those MG-specific binds.
+MG starts at sensitivity **1.0** and uses these configured keys:
+
+| Key | MG / competitive action |
+| --- | --- |
+| 0 (main keyboard) | Return to KZ Green |
+| 8 (main keyboard) | Toggle sensitivity 1.0 / 0.45 |
+| F5 | Send `!negev` for the server's ZE Negev shortcut |
+| F6 | Send `!xz`; the server determines its purchase effect |
+| F7 | Send `!he` for the server's ZE grenade shortcut |
+| 1–7 | Select weapon / equipment slots |
+| G | Drop weapon |
+| Z / C | Open the corresponding radio menus |
+| X | Select `slot12`, usually the healthshot |
+| H | Hide players; requires a server plugin |
+| W / A / S / D, Space, Ctrl, Shift | Normal movement, jump, duck and walk |
+| Wheel up / down | Normal jump |
+| E | Use / interact; does not open the buy menu |
+| Mouse1 / Mouse2 / Mouse3 | Primary attack / secondary attack / player ping |
+| L | Cycle gamma 1.0 / 1.8 / 2.2 / 2.6 |
+
+F5/F6/F7 send chat commands that require server support. P, N, I, J, O, F8 and HUD `[` / `]` are unbound in MG. Returning to Green restores sensitivity **2.7** and unbinds 8 and F5/F6/F7.
 
 Switching configs does not actively reset plugin states such as noclip, night vision or auto paint. For example, N is unbound in MG while previously enabled KZ noclip may remain active; return to KZ and press N to turn it off if needed.
 
