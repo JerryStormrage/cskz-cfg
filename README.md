@@ -4,52 +4,115 @@
 
 ## 更新记录 / Changelog
 
-- 2026-11-17：CS2 增加启动自动加载 Green、独立 HUD 双文件与分批快捷键；P 仅切换自动松 W，0 在 KZ/MG 间切换；加入三段切换提示音和安装说明。
-- 2026-11-17: Added CS2 Green autoload, two-part HUD preferences and separate shortcuts, W-release-only P switching, KZ/MG switching on 0, and three bundled transition sounds with installation instructions.
+- **2026-11-17**：CS2 增加启动自动加载 Green、分批加载 HUD、P 单独切换自动松 W、0 切换 KZ/MG，以及三段模式切换提示音。
+- **2026-11-17**: Added CS2 Green autoload, two-part HUD loading, P switching for automatic W release, KZ/MG switching on 0, and three transition sounds.
+- **2026-11-12**：恢复 CS:GO Green 右键蹲伏及 Bind 右键蹲跳并自动松 W；撤回 CS:GO 的 I、F8 快捷键及鼠标切换文件。
+- **2026-11-12**: Restored CS:GO Mouse2 duck in Green and crouch-jump with automatic W release in Bind; reverted the CS:GO I/F8 shortcuts and mouse switch configs.
+- **2026-11-07**：更新 CS2 个人 HUD 偏好；增加 CS2 KZ 自由观察和鼠标攻击／蹲跳切换。
+- **2026-11-07**: Updated personal CS2 HUD preferences and added KZ spectate and mouse attack/duck-jump switching.
 
-- 2026-11-12：恢复 CS:GO Green 右键蹲伏及 Bind 右键蹲跳并自动松 W。
-- 2026-11-12: Restored CS:GO Mouse2 duck in Green and crouch-jump with automatic W release in Bind.
-
-- 2026-11-12：撤回 CS:GO 的 I、F8 快捷键及鼠标切换文件；CS2 功能保留。
-- 2026-11-12: Reverted the CS:GO I and F8 shortcuts and mouse switch configs; CS2 features remain.
-- 2026-11-07：更新 CS2 个人 HUD 偏好；CS2 和 CS:GO KZ 增加 I 自由观察快捷键及 F8 鼠标攻击／蹲跳切换，新增对应切换配置。
-- 2026-11-07: Updated personal CS2 HUD preferences; added I for free-camera spectating and F8 to switch mouse attack/duck-jump bindings in CS2 and CS:GO KZ, with the required switch configs.
+---
 
 ## 中文
 
-个人 CS:GO / CS2 KZ 配置，按 Green（原生移动）和 Bind（辅助绑定）区分。
+本项目分别维护 **CS2** 和 **CS:GO Legacy** 的个人 KZ 配置。两款游戏是独立安装的，配置文件和安装目录不能混用。Green 指原生移动，并不代表所有键位均为游戏默认；配置包含个人灵敏度和键位，请按习惯调整。
 
-CS:GO 与 CS2 均使用 **P 切换 Green / Bind**。
+### CS2
 
-CS:GO 通过 `autoexec.cfg` 自动加载，请将本项目的 `autoexec.cfg` 中的内容复制进您的 `autoexec.cfg` 中使用（**注意可能会和您原有的 cfg 冲突**）。
+#### 文件和用途
 
-CS2 可通过 [autoexec.cfg](cs2/autoexec.cfg) 启动时自动加载 Green；在主菜单分别按 [ 和 ] 加载 HUD 两部分后再连接服务器。
+| 文件 | 用途 |
+| --- | --- |
+| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ 基础设置、原生移动和常用按键，灵敏度 2.7 |
+| [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 启用滚轮起跳时自动松 W |
+| [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | 关闭自动松 W，恢复普通 W 和滚轮跳跃 |
+| [cs2kzhud.cfg](cs2/cs2kzhud.cfg)、[cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | 分两批加载 HUD 和插件偏好 |
+| [cs2mg.cfg](cs2/cs2mg.cfg) | MG／竞技按键和 ZE 快捷购买 |
+| [cs2kzmouse_move.cfg](cs2/cs2kzmouse_move.cfg)、[cs2kzmouse_attack.cfg](cs2/cs2kzmouse_attack.cfg) | 切换鼠标蹲跳和攻击 |
+| [autoexec.cfg](cs2/autoexec.cfg) | 启动时加载 Green |
+| [sounds/cs_cfg](cs2/sounds/cs_cfg/) | 三个模式切换提示音，需单独复制到声音目录 |
 
-### 使用说明
+#### KZ 按键
 
-- **Green 指原生移动绑定，不代表全部键位均为游戏默认。KZ 相关按键配置会影响游玩 CS2 的其他模式，例如官方竞技、ZE、MG 等，请按需要自行修改。本文档未列出全部按键功能，请查阅 cfg 中的具体配置；大部分配置都有注释，没有编程基础也可以对照阅读。**
+| 按键 | 功能 |
+| --- | --- |
+| P | 在 Green 和 Bind 之间切换自动松 W |
+| 0（主键盘） | 进入 MG；MG 中再次按 0 返回 Green |
+| O | AD 节拍音开关 |
+| `[` / `]` | 分别加载 HUD 第 1 / 2 部分，**仅在主菜单使用** |
+| F8 | 切换鼠标左右键的攻击／蹲跳 |
+| F10 | 游戏退出确认 |
+| 1 / 滚轮向上 | 保存检查点 |
+| 2 | 传送到检查点 |
+| 3 / 4 | 上一个／下一个检查点 |
+| 5 / 6 / 7 | 撤销／暂停／重新开始 |
+| N | KZ 飞行／穿墙 |
+| I | 自由观察 |
+| G | 夜视 |
+| X / C | 自动喷涂开关／清理贴花 |
+| H / J | 隐藏玩家／持续跳跃统计 |
+| Z | 按住使用 Zed meme 语音键位；松开恢复数字键 |
+| L | 循环切换 Gamma 1.0 / 1.8 / 2.2 / 2.6 |
+| 滚轮向下 | 跳跃；Bind 中配合 W 自动松 W |
 
-- **配置包含个人灵敏度、键位及 HUD 设置，使用前请按自己的习惯调整。**
+检查点、飞行、观察、夜视等命令需要服务器插件支持。Z 的 meme 语音仅为个人可选设置；不需要时，可删除 Green 文件中 `+kz_radio`、`-kz_radio` 和 `bind z +kz_radio`；如果已加载，还需在控制台执行 `unbind z` 或重新绑定 Z。
 
-  HUD 的作者是 zer0k，具体配置由各位玩家自行定义。本项目保存的是我个人的 HUD 偏好设置，您可以按自己的习惯调整并导出。设置默认通过 API 保存，但有时可能未正确加载，因此我将其导出并保存在 cfg 中，方便恢复自己的设置，无需每次手动调整。
+P 从 Green 进入 Bind 时，按 W 会为下一次向下滚轮起跳准备自动松 W；再次按 P 只恢复普通 W 和滚轮跳跃，不重载完整 Green，因此保留当前灵敏度、AD 节拍音和鼠标状态。**切换前先松开移动、跳跃和蹲伏键。**完整加载 Green 时，节拍音默认关闭、鼠标恢复攻击。
 
-- 检查点、传送等命令依赖服务器插件；辅助绑定是否可用取决于游戏版本与服务器规则。部分服务器可能禁止使用相关 Bind 命令，请在使用前查阅并遵守对应服务器的规则。因违反服务器规则而导致的封禁，由使用者自行承担责任。部分 Bind 功能也可能在 Valve 更新游戏后失效，本项目不保证其能够长期稳定使用。
+#### MG／竞技模式
 
-- **CS2 必需启动项：在 KZ 服务器内执行本项目 cfg、通过 P 切换模式前，请先在 Steam 库右键 Counter-Strike 2 →“属性”→“通用”→“启动选项”中添加 `-disable_workshop_command_filtering`，然后重启游戏。**已有启动项请保留，用空格分隔后追加。该参数用于关闭创意工坊地图的命令过滤，应填写在启动选项中，不是输入控制台或写进 cfg。参见 [CS2KZ 使用指南](https://cs2kz.org/servers)。
+在 KZ 中按 **0** 进入 MG；MG 中按 **0** 返回 KZ Green。P 在 MG 中解绑，只负责 KZ 内的 Green／Bind 切换。切换前请松开移动、跳跃、蹲伏和 Z。
 
-- **CS2 的 KZ 操作通过 cfg 直接绑定按键实现，不再使用默认 Z/X/C 打开的 radio 菜单入口。**数字键 1–7 分别用于存点、传送、上一检查点、下一检查点、撤销、暂停和重开；X、C 改为自动喷涂开关和清贴花。这是直接绑定菜单中的常用功能，并非重新创建一个 radio 菜单。
+MG 默认灵敏度 **1.0**，主键盘 **8** 在 1.0 / 0.45 之间切换；返回 KZ 后灵敏度恢复为 **2.7**，8 解绑。MG 恢复普通武器数字键、左右键攻击和 G 丢弃武器；F5/F6/F7 为 ZE 快捷购买，需要服务器支持。返回 Green 会解除这些 MG 专用绑定。
 
-- Z 键的 **Zed meme 语音**是我额外加入的可选配置，其他服务器不一定支持。不需要时，可在 `cs2kzgreen.cfg` 中删除“Zed 服务器 meme 语音”注释下的两条 `alias`（`+kz_radio`、`-kz_radio`）及 `bind z +kz_radio`。如果已经加载过该配置，还需在控制台执行一次 `unbind z`，或自行将 Z 重新绑定为所需功能；仅从文件中删除内容不会清除游戏中已有的绑定。
+切换配置不会主动关闭服务器端已经开启的飞行、夜视、自动喷涂等状态。例如，进入 MG 后 N 已解绑，但先前开启的 KZ 飞行可能仍然开启；需要时可先返回 KZ，再按 N 关闭。
+
+#### HUD 与插件偏好
+
+HUD 由 zer0k 编写，本项目保存的是个人导出设置。按原顺序将 **222 条偏好**分为两部分，各 111 条：
+
+- **第 1 部分 `[`**：基础偏好、计时器、速度、按键和检查点显示，以及跳跃统计的位置。
+- **第 2 部分 `]`**：跳跃统计其余外观、路线、比赛、Perf/CJ/Jumpbug 提示、菜单、喷涂及统计报告。
+
+完整恢复时，在主菜单分别按两个键，再连接服务器。共享配置不包含个人 `kzp__stamp`；迁移自己的偏好时，可按插件导出说明自行保留个人标记。
+
+**不要在服务器内加载这两份 HUD 配置。**此前一次性加载大量 `setinfo` 曾导致 `NETWORK_DISCONNECT_OVERFLOW`；分批测试未触发该断线，但分批不减少累计变量数，仍可能触发引擎的 255 个变量限制。已有的服务器偏好是否保留取决于服务器和插件。
+
+#### 模式提示音
+
+| 操作 | 提示音 |
+| --- | --- |
+| KZ → MG，按 0 | wow |
+| MG → KZ Green，按 0 | poi |
+| Green → Bind，按 P | very_simple |
+| Bind → Green，按 P | 无提示音 |
+
+三个 `.vsnd_c` 文件由已有的 CS:GO 自定义声音使用 CS2 资源编译器转换。没有安装声音文件时，模式切换仍会执行，但不会播放相应声音。
+
+#### 安装与启动
+
+1. 在 Steam 库中右键 **Counter-Strike 2** →“管理”→“浏览本地文件”，打开游戏目录。
+2. 将 [cs2](cs2/) 目录下所需的 `.cfg` 文件复制到游戏的 `game/csgo/cfg/`。需要 P、F8 和 0 切换功能时，相关辅助文件也要一起复制。已有同名文件请先备份。
+3. 将 [cs2/sounds/cs_cfg](cs2/sounds/cs_cfg/) 中的三个声音文件复制到游戏 `game/csgo/sounds/cs_cfg/`；目录不存在时自行创建。声音文件和 `cfg` 是两个不同目录。
+4. 如需启动自动加载 Green，将 [CS2 autoexec.cfg](cs2/autoexec.cfg) 中的命令加入游戏目录已有的 `autoexec.cfg`；没有该文件时可创建。请保留自己已有的内容，并注意键位冲突。
+5. 在 Steam 的 CS2“属性”→“通用”→“启动选项”中追加 `-disable_workshop_command_filtering`，保留已有启动项，用空格分隔，然后重启游戏。该参数用于关闭创意工坊地图的命令过滤，参见 [CS2KZ 使用指南](https://cs2kz.org/servers)。
+6. 启动后若未自动加载，可在主菜单控制台执行 `exec cs2kzgreen`。在主菜单分别按 `[` 和 `]` 加载 HUD，再进入服务器。
+
+如果用记事本手动创建 cfg，请将“保存类型”设为“所有文件”、编码设为 UTF-8，并确认文件名不是 `.cfg.txt`。检查服务器规则：部分服务器可能禁止辅助绑定；Valve 更新也可能使部分功能失效。
 
 ### CS:GO Legacy
 
-| 模式 | 文件 | 用途 |
-| --- | --- | --- |
-| Green | [csgokzgreen.cfg](csgo/csgokzgreen.cfg) | 原生移动 |
-| Bind | [csgokzbind.cfg](csgo/csgokzbind.cfg) | WAD/SAD 适配 Null 与可选 2tick 大跳 |
-|  | [autoexec.cfg](csgo/autoexec.cfg) | 启动默认加载 Green |
+以下内容仅适用于 **CS:GO Legacy**，不要复制到 CS2 的配置目录。
 
-两种模式的灵敏度均为 **2.7**，各自独立加载所需设置，每次切换只显示最终模式的控制台说明。
+#### 文件和按键
+
+| 文件 | 用途 |
+| --- | --- |
+| [csgokzgreen.cfg](csgo/csgokzgreen.cfg) | Green：原生移动 |
+| [csgokzbind.cfg](csgo/csgokzbind.cfg) | Bind：WAD/SAD Null 与可选 2tick 大跳 |
+| [autoexec.cfg](csgo/autoexec.cfg) | 启动时加载 Green |
+
+两种模式的灵敏度均为 **2.7**，使用 **P** 切换；每次切换显示最终模式的控制台说明。
 
 | 按键 | Green | Bind |
 | --- | --- | --- |
@@ -57,231 +120,147 @@ CS2 可通过 [autoexec.cfg](cs2/autoexec.cfg) 启动时自动加载 Green；在
 | O | AD 节拍音开关，默认关闭 | AD 节拍音开关，默认关闭 |
 | Mouse2 | 按住蹲伏 | 蹲跳并自动松 W |
 | K | 无绑定 | 2tick 大跳开关，默认关闭 |
-| E | 使用 | 使用；每次触发 2tick 大跳前按下，重置蹲伏状态 |
-| 滚轮向上 | 存点 | 2tick 关闭时存点；开启后，每次先按 E 再向上滚动触发大跳 |
+| E | 使用 | 使用；每次 2tick 大跳前重置蹲伏状态 |
+| 滚轮向上 | 存点 | 2tick 关闭时存点；开启时触发大跳 |
 | 滚轮向下 | 普通跳跃 | 普通跳跃 |
 
-- **P 只切换模式**：Bind 使用右键蹲跳并自动松 W；Green 的右键为普通蹲伏。
+两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换和 J 持续跳跃统计；相关命令需要服务器插件。
 
-- 两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 喷涂、H HUD 切换，以及 J 持续跳跃统计开关；相关服务器命令需要插件支持。
+**2tick 大跳：**按 K 开启，每次先按 E 重置蹲伏状态，再向上滚动滚轮触发；再次按 K 关闭，滚轮向上恢复存点。感谢 [ss god](https://steamcommunity.com/id/ausbb) 分享，原文件见其 [Bilibili 专栏](https://www.bilibili.com/opus/629511818986799065)。
 
-- **2tick 大跳：**按 K 开启，先按 E 重置蹲伏状态，再正常向上滚动滚轮即可触发。**每次触发前都需要先按 E 重置。**再次按 K 关闭后，滚轮向上恢复存点。
+**WAD/SAD Null：**进入 Bind 后启用，适配 WAD 和 SAD 组合。感谢 [gus god](https://steamcommunity.com/id/lbgdre) 分享 `null.cfg`、`newnull.cfg` 和 `unnull.cfg`；本项目将其合并并补充 SAD 适配。
 
-  感谢 [ss god](https://steamcommunity.com/id/ausbb) 的开源分享，原文件详细信息参见他的 [Bilibili 专栏](https://www.bilibili.com/opus/629511818986799065)。
+#### 安装与启动
 
-- **WAD/SAD 适配 Null：**进入 Bind 模式即可启用，适配 WAD 和 SAD 按键组合，解决原先普通 Null 仅适用于 WA 或 WD 组合的使用限制。
+1. 在 Steam 库中右键 **Counter-Strike: Global Offensive** →“管理”→“浏览本地文件”，进入 Legacy 安装目录的 `csgo/cfg/`。
+2. 将 [csgo](csgo/) 中的 Green 和 Bind 文件复制到该目录。已有同名文件请先备份。
+3. 如需自动加载 Green，将 [CS:GO autoexec.cfg](csgo/autoexec.cfg) 中的命令追加到游戏目录中的 `autoexec.cfg`；没有该文件时可以创建。保留原有内容并检查冲突。也可在游戏控制台手动执行 `exec csgokzgreen`。
 
-  感谢 [gus god](https://steamcommunity.com/id/lbgdre) 拿下 2023 年第二届生肖杯冠军后在生肖杯群内的开源分享：`null.cfg`、`newnull.cfg` 和 `unnull.cfg`。本项目仅将这三份配置合并整理，并补充了 SAD 适配。
-
-### CS2
-
-| 模式 | 文件 | 用途 |
-| --- | --- | --- |
-| Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | 原生移动 |
-| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 目前仅支持滚轮向下起跳并自动松 W，其他 Bind 功能待日后研究整理 |
-| 退出 Bind | [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | 恢复普通 W 与滚轮跳跃，保留其他状态 |
-| HUD | [cs2kzhud.cfg](cs2/cs2kzhud.cfg)、[cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | 分批加载 HUD 和插件偏好 |
-| MG | [cs2mg.cfg](cs2/cs2mg.cfg) | MG/竞技键位及 ZE 购买快捷键 |
-| 鼠标切换 | [cs2kzmouse_move.cfg](cs2/cs2kzmouse_move.cfg)、[cs2kzmouse_attack.cfg](cs2/cs2kzmouse_attack.cfg) | F8 在蹲跳与攻击之间切换 |
-| 启动 | [autoexec.cfg](cs2/autoexec.cfg) | 启动时加载 Green |
-
-安装 CS2 的 autoexec 后，启动时加载 Green；再在主菜单分别按 [ 和 ] 加载 HUD 两部分，然后进服。也可在主菜单手动执行 `exec cs2kzgreen`、`exec cs2kzhud` 和 `exec cs2kzhud2`。HUD 和插件偏好保存在 [cs2kzhud.cfg](cs2/cs2kzhud.cfg) 和 [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg)，P 切换时不会重新执行大量 `setinfo`；不要在服务器内手动加载 HUD 配置。松开移动、跳跃和蹲伏键后按 P 进入 Bind，再按 P 返回 Green。
-
-| 按键 | 功能 |
-| --- | --- |
-| P | Green / Bind 模式切换 |
-| O | AD 节拍音开关 |
-| G | `sw_nv` 夜视开关，依赖服务器插件 |
-| L | Gamma 1.0 / 1.8 / 2.2 / 2.6 循环切换 |
-| Mouse2 | 默认副攻击 |
-| I | 自由观察（需服务器支持） |
-| F8 | 切换左右键攻击 / 蹲跳 |
-| `[` / `]` | 分别加载 HUD 第 1 / 2 部分；仅在主菜单使用 |
-| 0 | KZ / MG 切换；MG 中 P 解绑 |
-| 8 | MG 中切换灵敏度 1.0 / 0.45；KZ 中解绑 |
-| F10 | 游戏退出确认 |
-| Z | 按住使用 Zed meme 语音键位，松开恢复 KZ 数字键 |
-
-两种模式均保留 G 夜视、N 穿墙、C 清贴花、X 自动喷涂开关、H 玩家隐藏切换，以及 J 持续跳跃统计开关（`kz_jsalways`，直接执行控制台命令）；相关服务器命令需要插件支持。按一次 X 开启自动喷涂，再按一次关闭。H 不再切换游戏 HUD，各元素的显示请在 HUD 设置中单独调整。
-
-完整加载 Green 时 O 默认关闭；P 在 Green 和 Bind 之间切换时保留当前节拍音和鼠标状态。Bind 中按 W 会为下一次向下滚轮起跳准备自动松 W；再次按 P 执行 `cs2kzbind_off.cfg`，恢复普通 W 和滚轮跳跃，不重载完整 Green。
-
-### 安装与加载
-
-CS2 可选安装 [cs2mg.cfg](cs2/cs2mg.cfg)：KZ Green/Bind 中按主键盘 **0** 进入 MG，MG 中按 **0** 返回 KZ Green；P 只在 KZ 中切换 Green/Bind。MG 中解除 P、[ 和 ] 绑定，返回 Green 后恢复。切换前先松开移动、跳跃、蹲伏和 Z 键。
-
-加载 Green 后也可在主菜单分别按 [、] 执行 HUD 两部分；这会覆盖此前的 [ 和 ] 绑定；F10 保留退出确认功能。不要在服务器内按这两个键，否则可能再次触发溢出断线。分批不减少累计变量数，仍可能触发 255 个变量的引擎限制。
-
-HUD 导出的 222 条偏好按原顺序分为 111 + 111 条。第一部分主要为基础偏好、计时器、速度、按键和检查点显示；第二部分主要为路线、比赛、Perf/CJ/Jumpbug、菜单、喷涂和跳跃统计。跳跃统计位置在第一部分，其余外观在第二部分，完整恢复需分别执行两次。共享文件不包含个人 `kzp__stamp`，需要迁移个人偏好时，可按插件导出说明自行保留个人标记。
-
-按 0 进入 MG 时播放 **wow**，返回 KZ Green 时播放 **poi**；按 P 进入 Bind 时播放 **very_simple**，返回 Green 时不播放。三个转换后的 CS2 声音文件位于仓库的 [cs2/sounds/cs_cfg](cs2/sounds/cs_cfg/)；请将其中三个 `.vsnd_c` 文件复制到游戏 `game/csgo/sounds/cs_cfg/`（没有目录时自行创建），与 `cfg` 文件夹分开放置。声音来自原有 CS:GO 自定义音频，经 CS2 资源编译器转换；没有安装声音时切换仍可执行，但不会播放相应提示音。
-
-MG 默认灵敏度 1.0，8 切换 1.0/0.45，右键为副攻击，数字键恢复武器槽位；F5/F6/F7 保留 ZE 快捷购买，需服务器支持。返回 KZ Green 时恢复灵敏度 2.7、KZ 按键并关闭 AD 提示音，同时解除 F5/F6/F7/8 的 MG 专用绑定。返回的是 Green 配置默认值，不是切换前临时调整的状态。此切换不重置服务器端的夜视、隐藏玩家等插件状态。
-
-只需复制您所玩游戏的配置，无需下载整个仓库或解压文件。CS2 使用 F8 前，还需将 `cs2kzmouse_move.cfg` 和 `cs2kzmouse_attack.cfg` 复制到游戏 cfg 目录；切换前松开鼠标左右键。完整加载 Green 会恢复默认攻击，P 切换保留当前鼠标状态。
-
-1. 打开本项目中对应游戏的目录，分别打开下列所需 cfg 文件，复制文件中的全部内容。每份文件单独复制、单独保存，不要将内容合在一起。
-
-   **CS:GO：**[csgo 目录](csgo/)中的 [csgokzgreen.cfg](csgo/csgokzgreen.cfg) 和 [csgokzbind.cfg](csgo/csgokzbind.cfg)。
-
-   **CS2：**[cs2 目录](cs2/)中的 [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg)、[cs2kzbind.cfg](cs2/cs2kzbind.cfg)、[cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg)、[cs2kzhud.cfg](cs2/cs2kzhud.cfg)、[cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) 和两个 cs2kzmouse 配置；使用 MG 时还需 [cs2mg.cfg](cs2/cs2mg.cfg)。
-
-2. 在 Steam 库中右键点击对应游戏，选择“管理 → 浏览本地文件”，进入下列目录。路径中的 `…` 表示您自己的安装位置，盘符和 Steam 库位置可能不同。
-
-   **CS:GO：**右键点击 **Counter-Strike: Global Offensive**，打开的目录应为 `…\steam\steamapps\common\csgo legacy`。再进入 `csgo` → `cfg`，目标目录为 `…\steam\steamapps\common\csgo legacy\csgo\cfg`。
-
-   **CS2：**右键点击 **Counter-Strike 2**，再进入 `game` → `csgo` → `cfg`，目标目录为 `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`。
-
-3. 打开记事本，粘贴一份 cfg 的完整内容，选择“文件 → 另存为”。保存位置选择上一步的游戏 `cfg` 目录，文件名与项目中的文件名保持一致，例如 `cs2kzgreen.cfg`；**“保存类型”选择“所有文件”，编码选择 UTF-8，确保文件名不是 `cs2kzgreen.cfg.txt`。**用同样的方法保存其余所需的 cfg。如果已有同名文件，先备份再替换。
-
-4. **CS2 玩家先设置启动项：**Steam 库右键 Counter-Strike 2 →“属性”→“通用”→“启动选项”，追加 `-disable_workshop_command_filtering`，保留原有启动项并用空格分隔，然后重启游戏。CS:GO 无需此步骤。
-
-5. 打开游戏控制台，执行对应命令；两款游戏均使用 **P** 切换模式。
-
-| 游戏 | 加载 Green | 加载 Bind |
-| --- | --- | --- |
-| CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
-| CS2 | 启动时由 autoexec 加载 Green；在主菜单分别按 [ 和 ] 加载 HUD 两部分 | 进服后按 P |
-
-CS:GO 如需启动时自动加载 Green，打开本项目的 [autoexec.cfg](csgo/autoexec.cfg)，将内容复制到游戏同一 `cfg` 目录内的 `autoexec.cfg` 末尾。如果没有该文件，按上面的记事本方法创建。保留已有内容，并注意与原有配置的冲突；游戏已运行时，手动执行一次 `exec csgokzgreen` 即可加载新版。
-
-CS2 的 KZ 配置需一起保存。可将本项目 [CS2 autoexec.cfg](cs2/autoexec.cfg) 的内容加入游戏目录中已有的 autoexec，启动时加载 Green；如果已有 autoexec，请保留原有内容并留意键位冲突。启动后在主菜单分别按 [ 和 ] 加载 HUD 两部分，再进服按 P 切换。
-
-需要 MG 切换功能时，将 `cs2mg.cfg` 按相同方法额外保存到 CS2 的 cfg 目录；未安装 MG 配置时，请勿使用 0 键的 MG 入口。安装声音时请复制编译后的 `.vsnd_c` 文件，不要将其当作文本粘贴。
-
+辅助功能是否可用取决于游戏版本和服务器规则，请使用前查阅服务器规定。
 
 ---
 
 ## English
 
-Personal CS:GO / CS2 KZ configs, organized into Green (native movement) and Bind (assisted binds).
+This project maintains separate personal KZ configs for **CS2** and **CS:GO Legacy**. They are separate installations: their cfg files and installation paths are not interchangeable. Green means native movement, not a fully default key layout. Adjust the personal binds and sensitivity to your preferences.
 
-Both games use **P to switch Green / Bind**.
+### CS2
 
-CS:GO loads automatically through `autoexec.cfg`. Copy the contents of this project's `autoexec.cfg` into your own `autoexec.cfg` (**these settings may conflict with your existing configs**).
+#### Files
 
-For CS2, [autoexec.cfg](cs2/autoexec.cfg) can load Green at startup; press [ and ] separately in the main menu to load the two HUD parts before connecting to a server.
+| File | Purpose |
+| --- | --- |
+| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ basics, native movement and common binds; sensitivity 2.7 |
+| [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Enable automatic W release for wheel jumps |
+| [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | Restore normal W and wheel jumps |
+| [cs2kzhud.cfg](cs2/cs2kzhud.cfg), [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | Load HUD and plugin preferences in two parts |
+| [cs2mg.cfg](cs2/cs2mg.cfg) | MG/competitive binds and ZE purchases |
+| [cs2kzmouse_move.cfg](cs2/cs2kzmouse_move.cfg), [cs2kzmouse_attack.cfg](cs2/cs2kzmouse_attack.cfg) | Switch mouse duck/jump and attack |
+| [autoexec.cfg](cs2/autoexec.cfg) | Load Green at startup |
+| [sounds/cs_cfg](cs2/sounds/cs_cfg/) | Three transition sounds; install separately in the sound directory |
 
-### Usage notes
+#### KZ keys
 
-- **Green refers to native movement binds, not a completely default keyboard layout. KZ keybinds also affect other CS2 modes, such as official Competitive, ZE, and MG, so adjust them as needed. This document does not list every key function; check the cfg files for the full configuration. Most settings include comments to help you understand them without programming experience.**
+| Key | Action |
+| --- | --- |
+| P | Toggle automatic W release between Green and Bind |
+| 0 (main keyboard) | Enter MG; press 0 in MG to return to Green |
+| O | Toggle A/D keypress sounds |
+| `[` / `]` | Load HUD parts 1 / 2 separately, **in the main menu only** |
+| F8 | Toggle mouse attack / duck-jump |
+| F10 | Game quit confirmation |
+| 1 / wheel up | Save checkpoint |
+| 2 | Teleport to checkpoint |
+| 3 / 4 | Previous / next checkpoint |
+| 5 / 6 / 7 | Undo / pause / restart |
+| N | KZ noclip |
+| I | Free-camera spectate |
+| G | Night vision |
+| X / C | Toggle auto paint / clear decals |
+| H / J | Hide players / toggle always-on jumpstats |
+| Z | Hold for Zed meme voice keys; release to restore number keys |
+| L | Cycle gamma 1.0 / 1.8 / 2.2 / 2.6 |
+| Wheel down | Jump; in Bind, automatic W release when armed |
 
-- **These configs include personal sensitivity, keybinds, and HUD settings. Adjust them to your needs.**
+Checkpoint, noclip, spectate and night vision require server support. The Zed meme voice is optional: remove `+kz_radio`, `-kz_radio` and `bind z +kz_radio` from Green if unwanted; after loading it, also run `unbind z` or rebind Z.
 
-  The HUD was developed by zer0k, and each player customizes their own configuration. This project includes my personal HUD preferences, which you can adjust and export to suit your needs. Settings are normally saved through an API, but may occasionally fail to load correctly. I therefore keep an exported copy in the cfg to restore my setup without having to adjust everything manually each time.
+In Bind, pressing W arms the next downward wheel jump to release W. Pressing P again restores normal W and wheel jump without reloading the full Green cfg, preserving sensitivity, A/D sounds and mouse state. **Release movement, jump and duck before switching.** Loading the full Green cfg resets A/D sounds to off and restores mouse attack.
 
-- Checkpoint and teleport commands require server plugins. Assist availability depends on the game version and server rules. Some servers may prohibit these binds; read and follow the rules of each server before using them. Users are solely responsible for bans resulting from violations of server rules. Some bind features may also stop working after Valve updates the game, and this project does not guarantee that they will remain functional or reliable over time.
+#### MG / competitive
 
-- **Required CS2 launch option: before executing these configs on a KZ server or switching modes with P, right-click Counter-Strike 2 in your Steam Library → Properties → General → Launch Options, add `-disable_workshop_command_filtering`, and restart the game.** Preserve existing options and separate them with a space. This disables Workshop map command filtering; enter it in Launch Options, not in the console or a cfg file. See the [CS2KZ guide](https://cs2kz.org/servers).
+Press **0** in KZ to enter MG, and **0** in MG to return to Green. P is unbound in MG and only switches Green/Bind in KZ. Release movement, jump, duck and Z before switching.
 
-- **In CS2, this cfg binds KZ actions directly to keys instead of using the default Z/X/C radio menu shortcuts.** Keys 1–7 perform checkpoint, teleport, previous checkpoint, next checkpoint, undo, pause, and restart. X and C are rebound to toggle auto paint and clear decals. These binds provide direct access to common menu actions; they do not create a replacement radio menu.
+MG starts at sensitivity **1.0**; main keyboard **8** toggles 1.0 / 0.45. Returning to Green restores **2.7** and unbinds 8. MG restores weapon number keys, mouse attack and G for drop; F5/F6/F7 are ZE purchase shortcuts requiring server support. Returning to Green clears those MG-specific binds.
 
-- The **Zed meme voice** binding on Z is an optional addition of mine and may not work on other servers. To remove it, delete the two aliases (`+kz_radio` and `-kz_radio`) and `bind z +kz_radio` under the Zed meme voice comment in `cs2kzgreen.cfg`. If you have already loaded the config, also run `unbind z` once in the console, or rebind Z to your preferred action; deleting lines from the file does not clear an existing in-game binding.
+Switching configs does not actively reset plugin states such as noclip, night vision or auto paint. For example, N is unbound in MG while previously enabled KZ noclip may remain active; return to KZ and press N to turn it off if needed.
+
+#### HUD and plugin preferences
+
+The HUD was developed by zer0k; these files contain a personal export. The **222 preferences** are split in original order into two files of 111 settings:
+
+- **Part 1 `[`**: basic preferences, timer, speed, keys and checkpoint displays, plus jumpstats position.
+- **Part 2 `]`**: remaining jumpstats appearance, course, race, Perf/CJ/Jumpbug, menu, paint and statistics.
+
+Load both separately in the main menu before connecting. The shared configs omit the personal `kzp__stamp`; follow the plugin's export instructions when migrating your own preferences.
+
+**Do not load either HUD file while connected to a server.** Loading many `setinfo` commands at once previously caused `NETWORK_DISCONNECT_OVERFLOW`; separate loading was tested without that disconnect, but the total variable count remains unchanged and may still hit the engine's 255-variable limit. Retention of server preferences depends on the server and plugin.
+
+#### Transition sounds
+
+| Action | Sound |
+| --- | --- |
+| KZ → MG, press 0 | wow |
+| MG → KZ Green, press 0 | poi |
+| Green → Bind, press P | very_simple |
+| Bind → Green, press P | None |
+
+The three `.vsnd_c` files were converted from existing custom CS:GO audio using the CS2 resource compiler. Switching still works without the sound files, but the corresponding sounds will not play.
+
+#### Installation and startup
+
+1. In Steam, right-click **Counter-Strike 2** → **Manage → Browse local files**.
+2. Copy the required `.cfg` files from [cs2](cs2/) into the game's `game/csgo/cfg/`. Include the helper files for any P, F8 and 0 switching you use. Back up existing files with the same names first.
+3. Copy the three files from [cs2/sounds/cs_cfg](cs2/sounds/cs_cfg/) into the game's `game/csgo/sounds/cs_cfg/`, creating the directory if needed. This is separate from `cfg`.
+4. To load Green at startup, add the command from [CS2 autoexec.cfg](cs2/autoexec.cfg) to your existing game `autoexec.cfg`, or create it if absent. Preserve existing contents and check for binding conflicts.
+5. In CS2 Steam **Properties → General → Launch Options**, append `-disable_workshop_command_filtering`, separated from existing options by a space, and restart. It disables Workshop map command filtering; see the [CS2KZ guide](https://cs2kz.org/servers).
+6. If Green did not load automatically, run `exec cs2kzgreen` in the main-menu console. Press `[` and `]` separately in the main menu for HUD, then join a server.
+
+When creating a cfg in Notepad, use “All files” and UTF-8, and ensure the name does not end in `.cfg.txt`. Check server rules: some servers prohibit assists, and Valve updates can affect functionality.
 
 ### CS:GO Legacy
 
-| Mode | File | Purpose |
-| --- | --- | --- |
-| Green | [csgokzgreen.cfg](csgo/csgokzgreen.cfg) | Native movement |
-| Bind | [csgokzbind.cfg](csgo/csgokzbind.cfg) | WAD/SAD-compatible null binds and optional 2-tick crouch-jumps |
-|  | [autoexec.cfg](csgo/autoexec.cfg) | Load Green on startup |
+This section applies only to **CS:GO Legacy**. Do not copy these files into the CS2 cfg directory.
 
-Both modes use **2.7 sensitivity** and initialize their own settings. Each switch prints only the final mode's console guide.
+#### Files and keys
+
+| File | Purpose |
+| --- | --- |
+| [csgokzgreen.cfg](csgo/csgokzgreen.cfg) | Green: native movement |
+| [csgokzbind.cfg](csgo/csgokzbind.cfg) | Bind: WAD/SAD null and optional 2-tick crouch-jumps |
+| [autoexec.cfg](csgo/autoexec.cfg) | Load Green at startup |
+
+Both modes use sensitivity **2.7** and switch with **P**. Each switch prints the final mode's console guide.
 
 | Key | Green | Bind |
 | --- | --- | --- |
 | P | Switch to Bind | Switch to Green |
-| O | Toggle A/D sounds, default OFF | Toggle A/D sounds, default OFF |
-| Mouse2 | Hold to duck | Crouch-jump with automatic W release |
-| K | Unbound | Toggle 2-tick crouch-jumps, default OFF |
-| E | Use | Use; press before every 2-tick crouch-jump to reset the duck state |
-| Wheel up | Checkpoint | Checkpoint when OFF; when ON, press E before each scroll-up crouch-jump |
+| O | Toggle A/D sound, initially off | Toggle A/D sound, initially off |
+| Mouse2 | Hold duck | Crouch-jump with automatic W release |
+| K | Unbound | Toggle 2-tick crouch-jump, initially off |
+| E | Use | Use; reset duck before each 2-tick crouch-jump |
+| Wheel up | Checkpoint | Checkpoint when off; trigger crouch-jump when on |
 | Wheel down | Normal jump | Normal jump |
 
-- **P only switches modes.** Mouse2 crouch-jumps and releases W in Bind; it ducks normally in Green.
+Both modes retain G night vision, N noclip, C clear decals, X paint, H HUD toggle and J always-on jumpstats; server commands need plugin support.
 
-- Both modes retain G for night vision, N for noclip, C to clear decals, X to paint, H to toggle the HUD, and J to toggle always-on jumpstats. Server commands require plugin support.
+**2-tick crouch-jump:** Press K to enable; before each jump press E to reset duck, then scroll up. Press K again to disable and restore scroll-up checkpoint. Thanks to [ss god](https://steamcommunity.com/id/ausbb); see the original [Bilibili article](https://www.bilibili.com/opus/629511818986799065).
 
-- **2-tick crouch-jump:** Press K to enable it, press E to reset the duck state, then scroll up normally to trigger the jump. **Press E to reset before every attempt.** Press K again to disable it and restore scroll-up checkpoints.
+**WAD/SAD null:** Enabled in Bind and supports WAD and SAD combinations. Thanks to [gus god](https://steamcommunity.com/id/lbgdre) for `null.cfg`, `newnull.cfg` and `unnull.cfg`; this project combines them and adds SAD support.
 
-  Thanks to [ss god](https://steamcommunity.com/id/ausbb) for sharing the source. For details about the original file, see his [Bilibili article](https://www.bilibili.com/opus/629511818986799065).
+#### Installation and startup
 
-- **WAD/SAD-compatible null binds:** Enter Bind mode to enable support for WAD and SAD key combinations, extending the original basic null setup that only supported WA or WD combinations.
+1. In Steam, right-click **Counter-Strike: Global Offensive** → **Manage → Browse local files**, then open the Legacy installation's `csgo/cfg/`.
+2. Copy the Green and Bind files from [csgo](csgo/) into that directory. Back up existing names first.
+3. To load Green at startup, append the command from [CS:GO autoexec.cfg](csgo/autoexec.cfg) to the game's `autoexec.cfg`, or create it if absent. Preserve existing contents and check for conflicts. Alternatively, run `exec csgokzgreen` manually in the game console.
 
-  Thanks to [gus god](https://steamcommunity.com/id/lbgdre) for sharing the source configs `null.cfg`, `newnull.cfg`, and `unnull.cfg` in the Shengxiao Cup group after winning the second Shengxiao Cup in 2023. This project's changes are limited to combining and organizing those three configs and adding SAD support.
-
-### CS2
-
-| Mode | File | Purpose |
-| --- | --- | --- |
-| Green | [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | Native movement |
-| Bind | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Currently only supports scroll-down jumps with automatic W release; other bind features will be explored and organized in the future |
-| Leave Bind | [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | Restore normal W and wheel jump while preserving other state |
-| HUD | [cs2kzhud.cfg](cs2/cs2kzhud.cfg), [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | Load HUD and plugin preferences in two parts |
-| MG | [cs2mg.cfg](cs2/cs2mg.cfg) | MG/competitive and ZE purchase binds |
-| Mouse | [cs2kzmouse_move.cfg](cs2/cs2kzmouse_move.cfg), [cs2kzmouse_attack.cfg](cs2/cs2kzmouse_attack.cfg) | F8 switches duck/jump and attack |
-| Startup | [autoexec.cfg](cs2/autoexec.cfg) | Load Green at startup |
-
-With the CS2 autoexec installed, Green loads at startup; press [ and ] separately in the main menu to load the two HUD parts before joining a server. Alternatively, manually run `exec cs2kzgreen`, `exec cs2kzhud` and `exec cs2kzhud2` in the main menu. HUD and plugin preferences are in [cs2kzhud.cfg](cs2/cs2kzhud.cfg) and [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) and are not reloaded when switching modes; do not manually load the HUD config while connected. Release movement, jump, and duck keys before pressing P to enter Bind; press P again to return to Green.
-
-| Key | Action |
-| --- | --- |
-| P | Switch Green / Bind |
-| O | Toggle A/D keypress sounds |
-| G | Toggle night vision; requires the server plugin |
-| L | Cycle gamma: 1.0 / 1.8 / 2.2 / 2.6 |
-| Mouse2 | Secondary attack |
-| I | Free-camera spectate (server support required) |
-| F8 | Toggle mouse attack / duck-jump |
-| `[` / `]` | Load HUD parts 1 / 2 separately in the main menu |
-| 0 | Switch KZ / MG; P is unbound in MG |
-| 8 | Toggle sensitivity 1.0 / 0.45 in MG; unbound in KZ |
-| F10 | Game quit confirmation |
-| Z | Hold for Zed meme voice keys; release to restore KZ number keys |
-
-Both modes retain G for night vision, N for noclip, C to clear decals, X to toggle auto paint, H to toggle player visibility, and J to toggle always-on jumpstats (`kz_jsalways`, executed directly as a console command). Press X once to start auto painting and again to stop it. Server commands require plugin support. H no longer toggles the game HUD; adjust individual elements in the HUD settings.
-
-Loading the full Green config resets A/D sounds to OFF; P switches preserve A/D sound and mouse state. In Bind, pressing W arms the next downward wheel takeoff to release W. Press P again to run `cs2kzbind_off.cfg`, restoring normal W and wheel jumps without reloading the full Green config.
-
-### Installation and loading
-
-For CS2, optionally install [cs2mg.cfg](cs2/cs2mg.cfg). Press the main keyboard **0** in KZ Green/Bind to enter MG, then **0** in MG to return to KZ Green. P switches Green/Bind only in KZ; P, [ and ] are unbound in MG and restored on return to Green. Release movement, jump, duck, and Z before switching.
-
-After loading Green, [ and ] load the two HUD parts separately from the main menu, replacing previous [ and ] bindings. Do not press either key while connected to a server: loading the settings may cause an overflow disconnect. Splitting does not reduce the total variable count and may still trigger the 255-variable engine limit.
-
-The 222 exported preferences are split in their original order into 111 + 111 settings. Part 1 primarily covers basic preferences, timer, speed, keys and checkpoints; part 2 primarily covers course and race HUDs, Perf/CJ/Jumpbug, menus, paint and jump statistics. Jumpstats position is in part 1 and the rest of its appearance is in part 2, so load both for the full export. The shared files omit the personal `kzp__stamp`; follow the plugin's export instructions if migrating your own preferences.
-
-Pressing 0 plays **wow** when entering MG and **poi** when returning to KZ Green. P plays **very_simple** when entering Bind and plays no sound when returning to Green. Copy the three compiled `.vsnd_c` files from [cs2/sounds/cs_cfg](cs2/sounds/cs_cfg/) to the game's `game/csgo/sounds/cs_cfg/` directory, creating it if needed; this is separate from `cfg`. The sounds were converted from existing custom CS:GO audio with the CS2 resource compiler. Switching still works without them, but the corresponding sound will not play.
-
-MG starts at sensitivity 1.0; 8 toggles 1.0/0.45, Mouse2 uses secondary attack, and number keys select weapon slots. F5/F6/F7 retain ZE purchase shortcuts that require server support. Returning to KZ Green restores sensitivity 2.7 and KZ binds, turns A/D sounds off, and unbinds the MG shortcuts on F5/F6/F7/8. This restores Green defaults, not temporary adjustments made before switching. Server-side plugin states such as night vision and player hiding are not reset.
-
-Copy only the configs for the game you play. To use F8 in CS2, also copy `cs2kzmouse_move.cfg` and `cs2kzmouse_attack.cfg` to the game cfg folder. Release both mouse buttons before switching. Loading the full Green config restores attack bindings; switching with P preserves the current mouse state.
-
-1. Open the relevant game folder in this project, then open each required cfg file below and copy its full contents. Copy and save each file separately; do not combine them.
-
-   **CS:GO:** [csgokzgreen.cfg](csgo/csgokzgreen.cfg) and [csgokzbind.cfg](csgo/csgokzbind.cfg) in the [csgo folder](csgo/).
-
-   **CS2:** [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg), [cs2kzbind.cfg](cs2/cs2kzbind.cfg), [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg), [cs2kzhud.cfg](cs2/cs2kzhud.cfg), [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg), and both cs2kzmouse configs in the [cs2 folder](cs2/). Also install [cs2mg.cfg](cs2/cs2mg.cfg) if using MG.
-
-2. Right-click the relevant game in your Steam Library and select **Manage → Browse local files**, then navigate to the folder below. In these paths, `…` represents your installation location; the drive and Steam library location may vary.
-
-   **CS:GO:** Right-click **Counter-Strike: Global Offensive**. The folder should be `…\steam\steamapps\common\csgo legacy`. Open `csgo` → `cfg`; the destination is `…\steam\steamapps\common\csgo legacy\csgo\cfg`.
-
-   **CS2:** Right-click **Counter-Strike 2**, then open `game` → `csgo` → `cfg`. The destination is `…\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`.
-
-3. Open Notepad, paste the full contents of one cfg, and choose **File → Save As**. Save it in the game's `cfg` folder from the previous step, using the exact filename from this project, such as `cs2kzgreen.cfg`. **Set “Save as type” to “All files” and encoding to UTF-8. Make sure the filename is not `cs2kzgreen.cfg.txt`.** Repeat for the remaining required cfg files. Back up any existing files with the same names before replacing them.
-
-4. **CS2 players must first set the launch option:** right-click Counter-Strike 2 in your Steam Library → Properties → General → Launch Options, append `-disable_workshop_command_filtering`, and restart the game. Preserve existing options and separate them with a space. Skip this step for CS:GO.
-
-5. Open the game console and run the appropriate command below. Use **P** to switch modes in either game.
-
-| Game | Load Green | Load Bind |
-| --- | --- | --- |
-| CS:GO Legacy | `exec csgokzgreen` | `exec csgokzbind` |
-| CS2 | Autoexec loads Green; press [ and ] separately in the main menu for both HUD parts | Join a server, then press P |
-
-To load Green automatically when CS:GO starts, open this project's [autoexec.cfg](csgo/autoexec.cfg) and append its contents to `autoexec.cfg` in the same game `cfg` folder. If the file does not exist, create it using the Notepad steps above. Preserve existing content and check for conflicts with your own configs. If the game is already running, execute `exec csgokzgreen` once to load the update.
-
-Save the CS2 KZ configs. Add this project's [CS2 autoexec.cfg](cs2/autoexec.cfg) contents to the game's existing autoexec to load Green at startup, preserving any existing contents and checking for binding conflicts. Press [ and ] separately in the main menu for both HUD parts, then join a server and use P to switch modes.
-
-For MG switching, save `cs2mg.cfg` in the CS2 cfg folder using the same steps. If MG is not installed, do not use the MG shortcut on 0. Copy the compiled `.vsnd_c` files as files rather than pasting them as text.
+Assist availability depends on the game version and server rules; check the server's rules before use.
