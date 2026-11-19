@@ -23,7 +23,7 @@
 
 | 文件 | 用途 |
 | --- | --- |
-| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ 基础设置、原生移动和常用按键，灵敏度 2.7 |
+| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ 基础设置、原生移动和常用按键，灵敏度 2.0 |
 | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | 启用滚轮起跳时自动松 W |
 | [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | 关闭自动松 W，恢复普通 W 和滚轮跳跃 |
 | [cs2kzhud.cfg](cs2/cs2kzhud.cfg)、[cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | 分两批加载 HUD 和插件偏好 |
@@ -88,7 +88,7 @@ MG 默认灵敏度 **1.0**，并使用以下配置中的按键：
 | Mouse1 / Mouse2 / Mouse3 | 主攻击／副攻击／玩家标记 |
 | L | 循环切换 Gamma 1.0 / 1.8 / 2.2 / 2.6 |
 
-F5/F6/F7 的聊天命令需要服务器支持。MG 中 P、N、I、J、O、F8 和 HUD 的 `[` / `]` 解绑。返回 Green 后灵敏度恢复为 **2.7**，8 和 F5/F6/F7 解绑。
+F5/F6/F7 的聊天命令需要服务器支持。MG 中 P、N、I、J、O、F8 和 HUD 的 `[` / `]` 解绑。返回 Green 后灵敏度恢复为 **2.0**，8 和 F5/F6/F7 解绑。
 
 切换配置不会主动关闭服务器端已经开启的飞行、夜视、自动喷涂等状态。例如，进入 MG 后 N 已解绑，但先前开启的 KZ 飞行可能仍然开启；需要时可先返回 KZ，再按 N 关闭。
 
@@ -137,7 +137,7 @@ HUD 由 zer0k 编写，本项目保存的是个人导出设置。按原顺序将
 | [csgokzbind.cfg](csgo/csgokzbind.cfg) | Bind：WAD/SAD Null 与可选 2tick 大跳 |
 | [autoexec.cfg](csgo/autoexec.cfg) | 启动时加载 Green |
 
-两种模式的灵敏度均为 **2.7**，使用 **P** 切换；每次切换显示最终模式的控制台说明。
+两种模式的灵敏度均为 **2.0**，使用 **P** 切换；每次切换显示最终模式的控制台说明。
 
 | 按键 | Green | Bind |
 | --- | --- | --- |
@@ -175,7 +175,7 @@ This project maintains separate personal KZ configs for **CS2** and **CS:GO Lega
 
 | File | Purpose |
 | --- | --- |
-| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ basics, native movement and common binds; sensitivity 2.7 |
+| [cs2kzgreen.cfg](cs2/cs2kzgreen.cfg) | KZ basics, native movement and common binds; sensitivity 2.0 |
 | [cs2kzbind.cfg](cs2/cs2kzbind.cfg) | Enable automatic W release for wheel jumps |
 | [cs2kzbind_off.cfg](cs2/cs2kzbind_off.cfg) | Restore normal W and wheel jumps |
 | [cs2kzhud.cfg](cs2/cs2kzhud.cfg), [cs2kzhud2.cfg](cs2/cs2kzhud2.cfg) | Load HUD and plugin preferences in two parts |
@@ -240,7 +240,7 @@ MG starts at sensitivity **1.0** and uses these configured keys:
 | Mouse1 / Mouse2 / Mouse3 | Primary attack / secondary attack / player ping |
 | L | Cycle gamma 1.0 / 1.8 / 2.2 / 2.6 |
 
-F5/F6/F7 send chat commands that require server support. P, N, I, J, O, F8 and HUD `[` / `]` are unbound in MG. Returning to Green restores sensitivity **2.7** and unbinds 8 and F5/F6/F7.
+F5/F6/F7 send chat commands that require server support. P, N, I, J, O, F8 and HUD `[` / `]` are unbound in MG. Returning to Green restores sensitivity **2.0** and unbinds 8 and F5/F6/F7.
 
 Switching configs does not actively reset plugin states such as noclip, night vision or auto paint. For example, N is unbound in MG while previously enabled KZ noclip may remain active; return to KZ and press N to turn it off if needed.
 
@@ -289,7 +289,7 @@ This section applies only to **CS:GO Legacy**. Do not copy these files into the 
 | [csgokzbind.cfg](csgo/csgokzbind.cfg) | Bind: WAD/SAD null and optional 2-tick crouch-jumps |
 | [autoexec.cfg](csgo/autoexec.cfg) | Load Green at startup |
 
-Both modes use sensitivity **2.7** and switch with **P**. Each switch prints the final mode's console guide.
+Both modes use sensitivity **2.0** and switch with **P**. Each switch prints the final mode's console guide.
 
 | Key | Green | Bind |
 | --- | --- | --- |
